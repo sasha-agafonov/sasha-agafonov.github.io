@@ -21,18 +21,15 @@
 <body>
 
   <div id="nav">
-    <!-- <a href="#" id="current"> HOME </a> -->
-    <a href="#" id="current"> PROJECTS </a>
+    <a href="index.html"> PROJECTS </a>
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/sasha-agafonov"> SOURCE </a>
-    <a href="about.html"> ABOUT </a>
-
+    <a href="#" id="current"> ABOUT </a>
     <button onclick="dark()"> <img src="crescent.svg"> </button>
-    
   </div>
 
-  <div id="thumbnails">
+   <div id="thumbnails">
 
-      <div>
+      <!-- <div>
         <img src="clear_sky.gif" alt="cannot display image">
         <div>
           <span>
@@ -66,9 +63,9 @@
           Pseudo-Infinite Worlds
           </span>
         </div>
-      </div>
+      </div> -->
 
-  </div>
+  </div> 
 
 </body>
 
@@ -96,12 +93,12 @@
       menu.style.setProperty("--underline-offset-x", `${event.target.offsetLeft}px`);
     }
   });
-  menu.addEventListener("click", (event) => {
-    if (event.target.tagName.toLowerCase() === 'a') {
-      target_width = event.target.offsetWidth;
-      target_offset = event.target.offsetLeft;
-    }
-  });
+//   menu.addEventListener("click", (event) => {
+//     if (event.target.tagName.toLowerCase() === 'a') {
+//       target_width = event.target.offsetWidth;
+//       target_offset = event.target.offsetLeft;
+//     }
+//   });
   menu.addEventListener("mouseleave", () => {
     menu.style.setProperty("--underline-width", `${target_width}px`);
     menu.style.setProperty("--underline-offset-x", `${target_offset}px`);

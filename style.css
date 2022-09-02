@@ -12,6 +12,8 @@ body {
   padding: 0;
   width: 1000px;
   background-color: rgb(255, 255, 255);
+  overflow-y: scroll;
+
 }
 
 footer {
@@ -94,7 +96,7 @@ footer {
   height: 1px;
   transform: translateX(var(--underline-offset-x));
   width: var(--underline-width);
-  background-color: red;
+  background-color: black;
   transition: transform 0.5s, width 0.5s;
 }
 
