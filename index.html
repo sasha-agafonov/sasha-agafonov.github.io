@@ -3,35 +3,48 @@
 <html>
 
   <head>
+
     <title> Sasha Agafonov </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <!-- <script type="text/javascript" src="currentdetails.js"></script> -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <script>
+      var mode = "crescent.svg";
+      var m2 = 1;
+    </script>
+
     <script type="text/javascript" src="dark.js"></script>
+
   </head>
+
+
+
+
 
 
 <body>
 
   <div id="nav">
-    <!-- <a href="#" id="current"> HOME </a> -->
     <a href="#" id="current"> PROJECTS </a>
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/sasha-agafonov"> SOURCE </a>
-    <a href="about.html"> ABOUT </a>
-
+    <!-- <a id="tst"> </a> -->
+    <a id="tst"> ABOUT </a>
     <button onclick="dark()"> <img src="crescent.svg"> </button>
-    
   </div>
 
-  <div id="thumbnails">
 
+  
+
+<div id="content">
+  <!-- <div id="thumbnails">
       <div>
         <img src="clear_sky.gif" alt="cannot display image">
         <div>
@@ -67,8 +80,10 @@
           </span>
         </div>
       </div>
+  </div> -->
 
-  </div>
+<div>
+
 
 </body>
 
@@ -79,6 +94,28 @@
 </footer>
 
 </html>
+
+
+
+
+
+<script type="text/javascript">
+
+$(function() {
+    $("#tst").click(function() {
+
+        $('#content').load('/projects.html');
+        if ( status == "error" ) {
+                        alert( "Sorry but there was an error "  );
+                    }
+                    else alert("good");
+
+    });
+});
+
+</script>
+
+
 
 
 
@@ -96,12 +133,12 @@
       menu.style.setProperty("--underline-offset-x", `${event.target.offsetLeft}px`);
     }
   });
-  menu.addEventListener("click", (event) => {
-    if (event.target.tagName.toLowerCase() === 'a') {
-      target_width = event.target.offsetWidth;
-      target_offset = event.target.offsetLeft;
-    }
-  });
+  // menu.addEventListener("click", (event) => {
+  //   if (event.target.tagName.toLowerCase() === 'a') {
+  //     target_width = event.target.offsetWidth;
+  //     target_offset = event.target.offsetLeft;
+  //   }
+  // });
   menu.addEventListener("mouseleave", () => {
     menu.style.setProperty("--underline-width", `${target_width}px`);
     menu.style.setProperty("--underline-offset-x", `${target_offset}px`);
