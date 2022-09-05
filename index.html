@@ -25,65 +25,17 @@
 
   </head>
 
-
-
-
-
-
 <body>
 
   <div id="nav">
-    <a href="#" id="current"> PROJECTS </a>
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/sasha-agafonov"> SOURCE </a>
-    <!-- <a id="tst"> </a> -->
-    <a id="tst"> ABOUT </a>
+    <a id ="projects"> PROJECTS </a>
+    <a id = "source" target="_blank" rel="noopener noreferrer" href="https://github.com/sasha-agafonov"> SOURCE </a>
+    <a id ="about"> ABOUT </a>
     <button onclick="dark()"> <img src="crescent.svg"> </button>
   </div>
 
 
-  
-
-<div id="content">
-  <!-- <div id="thumbnails">
-      <div>
-        <img src="clear_sky.gif" alt="cannot display image">
-        <div>
-          <span>
-          Clear Sky
-          </span>
-        </div>
-      </div>
-
-      <div>
-        <img src="hydro-large.gif" alt="cannot display image">
-        <div>
-          <span>
-          Hydraulic Erosion
-          </span>
-        </div>
-      </div>
-
-      <div>
-        <img src="lab_static.jpg" alt="cannot display image">
-        <div>
-          <span>
-          Ballistic Impact
-          </span>
-        </div>
-      </div>
-
-      <div>
-        <img src="infinite.gif" alt="cannot display image">
-        <div>
-          <span>
-          Pseudo-Infinite Worlds
-          </span>
-        </div>
-      </div>
-  </div> -->
-
-<div>
-
+<div id="content"> </div>
 
 </body>
 
@@ -95,22 +47,19 @@
 
 </html>
 
-
-
-
-
 <script type="text/javascript">
 
 $(function() {
-    $("#tst").click(function() {
-
+  $("#projects").click(function() {
         $('#content').load('/projects.html');
-        if ( status == "error" ) {
-                        alert( "Sorry but there was an error "  );
-                    }
-                    else alert("good");
-
     });
+    $("#about").click(function() {
+        $('#content').load('/about.html');
+    });
+});
+
+$(document).ready(function(){
+    $("#content").load("/projects.html");
 });
 
 </script>
@@ -118,12 +67,26 @@ $(function() {
 
 
 
+<!-- <script>
+  $(document).ready(function(){
+
+          $("img").animate({
+              left: 300
+          });
+      });
+  });
+  </script> -->
+
+
+
 
 
 <script>
   const menu = document.getElementById("nav");
-  var target_width = document.getElementById("current").offsetWidth;
-  var target_offset = document.getElementById("current").offsetLeft;
+
+  var target_width = document.getElementById("projects").offsetWidth;
+  var target_offset = document.getElementById("projects").offsetLeft;
+
   menu.style.setProperty("--underline-width", `${target_width}px`);
   menu.style.setProperty("--underline-offset-x", `${target_offset}px`);
 
@@ -131,14 +94,17 @@ $(function() {
     if (event.target.tagName.toLowerCase() === 'a') {
       menu.style.setProperty("--underline-width", `${event.target.offsetWidth}px`);
       menu.style.setProperty("--underline-offset-x", `${event.target.offsetLeft}px`);
+      
     }
   });
-  // menu.addEventListener("click", (event) => {
-  //   if (event.target.tagName.toLowerCase() === 'a') {
-  //     target_width = event.target.offsetWidth;
-  //     target_offset = event.target.offsetLeft;
-  //   }
-  // });
+
+  menu.addEventListener("click", (event) => {
+    if (event.target.tagName.toLowerCase() === 'a' && event.target.id !== 'source') {
+      target_width = event.target.offsetWidth;
+      target_offset = event.target.offsetLeft;
+    }
+  });
+
   menu.addEventListener("mouseleave", () => {
     menu.style.setProperty("--underline-width", `${target_width}px`);
     menu.style.setProperty("--underline-offset-x", `${target_offset}px`);
