@@ -50,50 +50,16 @@
 
 <script type="text/javascript">
 
-// $(function() {
-//     $("#projects").click(function() {
-//         $('#content').load('/projects.html');
-//     });
-//     $("#about").click(function() {
-//         $('#content').load('/about.html');
-//     });
-// });
+
 
 $(document).ready(function(){
-    $("#content").load("/projects.html");
+  // init
+  $("#content").load("/projects.html");
 });
+  // copy
+  document.getElementById("copy").innerHTML = new Date().getFullYear();
 
-
-
-// function test() {
-//   $('#content').load('/projects.html');
-// }
-
-// function loadFragment(fragment) {
-//   $('#content').load("/" + fragment + ".html");
-//   alert("ok");
-// }
-
-</script>
-
-
-
-
-<!-- <script>
-  $(document).ready(function(){
-
-          $("img").animate({
-              left: 300
-          });
-      });
-  });
-  </script> -->
-
-
-
-
-
-<script>
+  // dynavbar
   const menu = document.getElementById("nav");
 
   var target_width = document.getElementById("projects").offsetWidth;
@@ -122,24 +88,5 @@ $(document).ready(function(){
     menu.style.setProperty("--underline-offset-x", `${target_offset}px`);
   });
 
-// function dark() {
 
-//    // document.body.classList.toggle("dark");
-//    // var dec = document.querySelectorAll("body *");
-//    // dec.classList.toggle("dark");
-//    // var dex = document.getElementById("mytarget");
-//    // dex.classList.toggle("dark");
-
-//   const list = document.querySelectorAll('#nav *');
-//   for (const element of list) element.classList.toggle("dark");
-//   document.body.classList.toggle("dark");
-
-
-//    var mode = document.querySelector("#nav img").src.replace(/^.*[\\\/]/, '');;
-//    if (mode == "crescent.svg") document.querySelector("#nav img").src = "sun1.svg";
-//    else document.querySelector("#nav img").src = "crescent.svg";
-
-// }
-
-document.getElementById("copy").innerHTML = new Date().getFullYear();
 </script>

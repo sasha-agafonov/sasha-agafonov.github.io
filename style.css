@@ -193,15 +193,17 @@ footer > a {
 .text div {
   font-size: 200%;
   color: black;
+  margin:auto;
+  /* border: 1px solid red; */
+  text-align: center;
+vertical-align: middle;
 }
 
-/* .text {
-  margin: 35px 0;
-
-} */
 
 .text img {
-  width: 12%;
+  /* width: 12%; */
+  display:block;
+    margin:auto;
 }
 
 /* .text > pre {
