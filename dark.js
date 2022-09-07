@@ -31,3 +31,8 @@ function dark() {
    }
  
  }
+
+function loadFragment(fragment) {
+  $('#content').load("/" + fragment + ".html");
+  //alert("okfd");
+}

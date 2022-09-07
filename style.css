@@ -172,6 +172,8 @@ footer > a {
 #nav button img {
   height: 30px;
   width: 30px;
+  /* -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
 }
 
 
@@ -188,9 +190,15 @@ footer > a {
   font-size: 140%;
 }
 
-.text > div {
-  margin: 35px 0;
+.text div {
+  font-size: 200%;
+  color: black;
 }
+
+/* .text {
+  margin: 35px 0;
+
+} */
 
 .text img {
   width: 12%;

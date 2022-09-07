@@ -28,9 +28,10 @@
 <body>
 
   <div id="nav">
-    <a id ="projects"> PROJECTS </a>
+    <a id ="projects" onclick="loadFragment('projects')"> PROJECTS </a>
     <a id = "source" target="_blank" rel="noopener noreferrer" href="https://github.com/sasha-agafonov"> SOURCE </a>
-    <a id ="about"> ABOUT </a>
+    <a onclick="loadFragment('about')"> ABOUT </a>
+    <!-- <a onclick="loadFragment('projects')"> TEST </a> -->
     <button onclick="dark()"> <img src="crescent.svg"> </button>
   </div>
 
@@ -49,18 +50,29 @@
 
 <script type="text/javascript">
 
-$(function() {
-  $("#projects").click(function() {
-        $('#content').load('/projects.html');
-    });
-    $("#about").click(function() {
-        $('#content').load('/about.html');
-    });
-});
+// $(function() {
+//     $("#projects").click(function() {
+//         $('#content').load('/projects.html');
+//     });
+//     $("#about").click(function() {
+//         $('#content').load('/about.html');
+//     });
+// });
 
 $(document).ready(function(){
     $("#content").load("/projects.html");
 });
+
+
+
+// function test() {
+//   $('#content').load('/projects.html');
+// }
+
+// function loadFragment(fragment) {
+//   $('#content').load("/" + fragment + ".html");
+//   alert("ok");
+// }
 
 </script>
 
