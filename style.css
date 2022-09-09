@@ -7,10 +7,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-:root {
-  --m2: black;
-
-}
 
 body {
   margin: 0 auto;
@@ -19,7 +15,6 @@ body {
   width: 1000px;
   background-color: rgb(255, 255, 255);
   overflow-y: scroll;
-
 }
 
 
@@ -31,12 +26,11 @@ footer {
   font-size: 120%;
 }
 
+
 footer > a {
   text-decoration: underline;
   margin: 0 10px;
 }
-
-
 
 
 #projects {}
@@ -184,33 +178,44 @@ footer > a {
 }
 
 
-.text {
-  width: 100%;
+.text p {
   color: rgba(120, 120, 120 ,1);
-  font-size: 140%;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 135%;
+  padding: 40px 60px 0 60px;
+  line-height: 175%;
 }
 
-.text div {
-  font-size: 200%;
+.text h1 {
+  font-size: 230%;
   color: black;
-  margin:auto;
+  margin: 90px auto 70px;
+  font-family: "Roboto";
+  font-weight: 600;
   /* border: 1px solid red; */
   text-align: center;
-vertical-align: middle;
+  vertical-align: middle;
+  color: rgba(120, 120, 120 ,1);
 }
-
 
 .text img {
   /* width: 12%; */
-  display:block;
-    margin:auto;
+    display:block;
+    margin: 10px auto 40px;
+    height: 700px;
+    width: 700px;
 }
 
-/* .text > pre {
-  //font-size: 120%;
-} */
+/* .text p {
 
-/* .light {
-  background-color: white !important;
-  color: rgb(40, 40, 40) !important;
-} */
+}
+
+.text h2 {
+    font-size: 180%;
+  color: black;
+  margin: 50px auto 20px;
+  /* border: 1px solid red; */
+  /* text-align: center;
+  vertical-align: middle;
+} */ 
