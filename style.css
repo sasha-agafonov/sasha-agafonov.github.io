@@ -15,6 +15,12 @@ body {
   width: 1000px;
   background-color: rgb(255, 255, 255);
   overflow-y: scroll;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
 }
 
 
@@ -183,7 +189,7 @@ footer > a {
   font-family: "Roboto";
   font-weight: 700;
   font-size: 135%;
-  padding: 40px 60px 0 60px;
+  padding: 20px 60px 0 60px;
   line-height: 175%;
 }
 
@@ -191,6 +197,18 @@ footer > a {
   font-size: 230%;
   color: black;
   margin: 90px auto 70px;
+  font-family: "Roboto";
+  font-weight: 600;
+  /* border: 1px solid red; */
+  text-align: center;
+  vertical-align: middle;
+  color: rgba(120, 120, 120 ,1);
+}
+
+.text h2 {
+  font-size: 180%;
+  color: black;
+  margin: 70px auto 10px;
   font-family: "Roboto";
   font-weight: 600;
   /* border: 1px solid red; */

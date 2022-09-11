@@ -4,11 +4,56 @@
 
     <img src="hydro-large.gif" alt="cannot display image">
 
+    <h2> Introduction </h2>
+
     <p> Purely fractal terrains can resemble natural mountainous landscapes reasonably well. 
       However, such terrains are visually and statistically homogeneous, and they often lack 
       complex natural landforms, including mountain ridges and valleys. One of the ways to 
       overcome this is to simulate real-world physical processes, such as weathering and erosion 
       in the virtual terrain.
+    </p>
+
+    <h2> Terrain representation </h2>
+
+    <p>
+      One simple but effective approach to represent a virtual terrain is to use a heightmap. 
+      A heightmap is a 2D array, most usually in the form of a grayscale raster image containing 
+      the terrain elevation data. A terrain can then be visualised in 3D by constructing and 
+      rendering a triangle mesh from the data stored in the heightmap. On the other hand, a single 
+      heightmap is insufficient for representing terrains with cave systems or layers of different 
+      materials. A possible solution to this problem would be to store the 3D representation of 
+      the terrain in the form of volume elements, also known as voxels. However, a voxel-based 
+      approach may not always be ideal depending on the task due to high memory requirements. 
+      For this reason, I decided to choose heightmaps.
+ 
+    </p>
+
+    <h2> Terrain generation </h2>
+
+    <p>
+      A variety of terrain generation methods exist. Noise functions and midpoint 
+      displacment are the most suitable for generating a terrain heightmap. I went with a 
+      technique called Perlin Noise because of its fast speed and excellent visual quality. 
+    </p>
+
+    <h2> Hydraulic Erosion </h2>
+
+    <p>
+      The topic of hydraulic erosion is a vast area. The idea is to simulate erosion, 
+      transport and deposition of material by water. Naturally, this brings a need for 
+      an implementation of a fluid dynamics system. I Implemented a 
+    </p>
+
+    <h2> Rendering </h2>
+
+    <p>
+
+    </p>
+
+    <h2> Ideas For Future Work </h2>
+
+    <p>
+
     </p>
     
 </div>
