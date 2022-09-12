@@ -39,21 +39,31 @@
     <h2> Hydraulic Erosion </h2>
 
     <p>
-      The topic of hydraulic erosion is a vast area. The idea is to simulate erosion, 
-      transport and deposition of material by water. Naturally, this brings a need for 
-      an implementation of a fluid dynamics system. I Implemented a 
+      
+      The topic of hydraulic erosion is a vast area. While many approaches exist, the key idea 
+      behind them is to simulate erosion, transport and deposition of material by water. Naturally, 
+      this brings a need for an implementation of a fluid dynamics system. Since the terrain is 
+      represented as a 2-dimensional heightmap, it made sense to use the concept of virtual pipes 
+      as the foundation for fluid dynamics system.
     </p>
 
     <h2> Rendering </h2>
 
-    <p>
 
+    <p>
+      Once the terrain heightmap is eroded, it is time to render the results in 3D. 
+      In order to achieve this, we need to construct a terrain mesh by connecting all 
+      elevation points with triangles. Additionally, we need to specify normals and 
+      colours at each of these points, that is, vertices.
     </p>
 
     <h2> Ideas For Future Work </h2>
-
-    <p>
-
+ 
+      <p>
+        While the project produces satisfying visual results, there is much room for improvement. 
+        Implementing multiple material layers may further enhance the terrain quality. The project may 
+        also benefit from using a system for procedural generation of vegetation - something known as the Lindenmayer Systems.
+      
     </p>
     
 </div>

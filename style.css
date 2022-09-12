@@ -20,6 +20,7 @@ body {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  transition: 0.33s;
 
 }
 
@@ -118,6 +119,7 @@ footer > a {
   display: flex;
   align-items: center;
   position: relative;
+
   --underline-width: 0;
   --underline-offset-x: 0;
   --main-bg-color: black;
@@ -181,6 +183,12 @@ footer > a {
   background-color: rgb(32, 34, 36) !important;
   color: white !important;
   font-weight: 400;
+  /* -khtml-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: color 0.3s ease; */
 }
 
 

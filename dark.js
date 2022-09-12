@@ -6,6 +6,7 @@ function dark() {
 
    document.body.classList.toggle("dark");
    mode = document.querySelector("#nav img").src.replace(/^.*[\\\/]/, '');
+   
    const elem = document.getElementById("nav")
    
    if (mode == "crescent.svg") {
@@ -21,10 +22,20 @@ function dark() {
  }
 
 
+// function loadFragment(frag) {
+//   $(document).ready(function(){
+//     $("#content").fadeOut(250).load("/" + frag + ".html", function(response, status, xhr) {
+//       $(this).fadeIn(250);
+//     });
+//   });
+// }
+
 function loadFragment(frag) {
   $(document).ready(function(){
-    $("#content").load("/" + frag + ".html");
-    
+    $('#content').fadeOut(167, () => {
+      $('#content').load("/" + frag + ".html", () => {
+          $('#content').fadeIn(333);
+      });
+    });
   });
-
 }
