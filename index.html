@@ -29,7 +29,7 @@
 
   <div id="nav">
     <a id ="projects" onclick="loadFragment('projects')"> PROJECTS </a>
-    <a id = "source" target="_blank" rel="noopener noreferrer" href="https://github.com/sasha-agafonov"> SOURCE </a>
+    <a id = "source" target="_blank" rel="noopener noreferrer" ondragstart="return false;" href="https://github.com/sasha-agafonov"> SOURCE </a>
     <a onclick="loadFragment('about')"> ABOUT </a>
     <!-- <a onclick="loadFragment('projects')"> TEST </a> -->
     <button onclick="dark()"> <img src="crescent.svg"> </button>
@@ -56,6 +56,7 @@ $(document).ready(function(){
   // init
   $("#content").load("/projects.html");
 });
+
   // copy
   document.getElementById("copy").innerHTML = new Date().getFullYear();
 

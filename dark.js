@@ -2,9 +2,12 @@ function dark() {
 
    const list = document.querySelectorAll('#nav *');
 
-   for (const element of list) element.classList.toggle("dark");
+   for (const element of list) {
+    element.classList.toggle("dark-mode-txt");
+   }
 
-   document.body.classList.toggle("dark");
+   document.body.classList.toggle("dark-mode-bg");
+
    mode = document.querySelector("#nav img").src.replace(/^.*[\\\/]/, '');
    
    const elem = document.getElementById("nav")
@@ -22,20 +25,21 @@ function dark() {
  }
 
 
-// function loadFragment(frag) {
-//   $(document).ready(function(){
+function loadFragment(frag) {
+  $(document).ready(function(){
+    $("#content").load("/" + frag + ".html",function(){}).hide().fadeIn(500);
 //     $("#content").fadeOut(250).load("/" + frag + ".html", function(response, status, xhr) {
 //       $(this).fadeIn(250);
 //     });
-//   });
-// }
-
-function loadFragment(frag) {
-  $(document).ready(function(){
-    $('#content').fadeOut(167, () => {
-      $('#content').load("/" + frag + ".html", () => {
-          $('#content').fadeIn(333);
-      });
-    });
   });
 }
+
+// function loadFragment(frag) {
+//   $(document).ready(function(){
+//     $('#content').fadeOut(167, () => {
+//       $('#content').load("/" + frag + ".html", () => {
+//           $('#content').fadeIn(333);
+//       });
+//     });
+//   });
+// }

@@ -20,7 +20,7 @@ body {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  transition: 0.33s;
+  transition: 0.5s;
 
 }
 
@@ -37,6 +37,11 @@ footer {
 footer > a {
   text-decoration: underline;
   margin: 0 10px;
+}
+
+
+img {
+  pointer-events: none;
 }
 
 
@@ -119,7 +124,6 @@ footer > a {
   display: flex;
   align-items: center;
   position: relative;
-
   --underline-width: 0;
   --underline-offset-x: 0;
   --main-bg-color: black;
@@ -146,6 +150,7 @@ footer > a {
   text-decoration: none;
   margin: 0 24px;
   cursor: pointer;
+  /* background-color: rgba(0, 0, 0, 0); */
 }
 
 
@@ -161,6 +166,7 @@ footer > a {
 
 #nav button {
   border: 0;
+  padding: 0;
   background-color: transparent;
   cursor: pointer;
 }
@@ -178,11 +184,16 @@ footer > a {
   transform: scaleX(-1); */
 }
 
-
-.dark {
-  background-color: rgb(32, 34, 36) !important;
+.dark-mode-bg {
+  background-color: rgba(32, 34, 36, 1) !important;
   color: white !important;
-  font-weight: 400;
+  font-weight: 300;
+}
+
+.dark-mode-txt {
+  color: white !important;
+  font-weight: 300;
+  /* transition: 0.1s; */
   /* -khtml-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -231,6 +242,15 @@ footer > a {
     margin: 10px auto 40px;
     height: 700px;
     width: 700px;
+}
+
+.text a {
+    text-decoration: underline;
+    color: rgba(120, 120, 120 ,1);
+}
+
+.text a:visited {
+  color: rgba(120, 120, 120 ,1);
 }
 
 /* .text p {
