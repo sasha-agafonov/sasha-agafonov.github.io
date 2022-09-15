@@ -16,12 +16,29 @@
   <h1> Clear Sky </h1>
 
   <img src="clear_sky.gif" alt="cannot display image">
+
   <h2> Introduction </h2>
-  <p> Purely fractal terrains can resemble natural mountainous landscapes reasonably well. 
-    However, such terrains are visually and statistically homogeneous, and they often lack 
-    complex natural landforms, including mountain ridges and valleys. One of the ways to 
-    overcome this is to simulate real-world physical processes, such as weathering and erosion 
-    in the virtual terrain.
+  
+  <p> This is my very first OpenGL project. I really wanted to apply some motion physics, 
+    and in fact I settled on the idea of creating an animated cloud trail
+    even before I decided to make an airplane. I did consider other possibilities 
+    for the aircraft, such as hot air balloon
+    ships, but in the end, I decided that I won’t be able to create a reasonably detailed 
+    and recognisable ship within the
+    given timeframe, primarily because of the complex shapes involved. 
+    For this reason, I decided to go ahead with a
+    biplane.
+  </p>
+
+  <h2> Contrail </h2>
+
+  <p>
+    Implementing an animated contrail was probably the most challenging part of the project. 
+    The main idea is that the contrail is represented with spherical particles that spawn 
+    from the back of the plane. A particle spawns with some velocity, 
+    otherwise the contrail would not look natural. We set the scalar value to a fraction of the plane's speed. 
+    Additionally, each particle moves in the same direction as the plane when that particle was spawned. When 
+    a particle is spawned, it begins to decrease in size before disappearing completely.
   </p>
   
 </div>
