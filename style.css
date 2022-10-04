@@ -208,7 +208,7 @@ img {
   font-family: "Roboto";
   font-weight: 700;
   font-size: 135%;
-  padding: 20px 60px 0 60px;
+  padding-top: 20px;
   line-height: 175%;
 }
 
@@ -240,7 +240,6 @@ img {
   /* width: 12%; */
     display:block;
     margin: 10px auto 40px;
-    height: 700px;
     width: 700px;
 }
 
