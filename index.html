@@ -28,13 +28,20 @@
 
 <body>
 
-  <div id = "nav">
-    <a id = "hamburger" class = "icon" > <i class = "fa fa-bars"> </i> </a>
-    <a id = "projects" onclick = "loadFragment('projects')"> PROJECTS </a>
-    <a id = "source" target = "_blank" rel = "noopener noreferrer" ondragstart = "return false;" href = "https://github.com/sasha-agafonov"> SOURCE </a>
-    <a id = "about" onclick = "loadFragment('about')"> ABOUT </a>
+  <div id="nav">
+    <button id="hamburger"> 
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a id="projects" onclick="loadFragment('projects')"> PROJECTS </a>
+    <a id="source" target="_blank" rel="noopener noreferrer" ondragstart="return false;" href="https://github.com/sasha-agafonov"> SOURCE </a>
+    <a id="about" onclick="loadFragment('about')"> ABOUT </a>
     
     <button onclick="dark()"> <img src="crescent.svg"> </button>
+
   </div>
 
 
@@ -51,6 +58,13 @@
 </html>
 
 <script type="text/javascript">
+
+
+$(document).ready(function(){
+	$('#hamburger').click(function(){
+		$(this).toggleClass('open');
+	});
+});
 
 
 
