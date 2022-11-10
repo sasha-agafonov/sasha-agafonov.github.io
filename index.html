@@ -3,7 +3,6 @@
 <html>
 
   <head>
-
     <title> Sasha Agafonov </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -13,47 +12,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <script>
       var mode = "crescent.svg";
       var m2 = 1;
     </script>
-
     <script type="text/javascript" src="dark.js"></script>
-
   </head>
 
-<body>
+  <body>
+    <div id="nav">
+      <button id="hamburger"> 
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a id="projects" onclick="loadFragment('projects')"> PROJECTS </a>
+      <a id="source" target="_blank" rel="noopener noreferrer" ondragstart="return false;" href="https://github.com/sasha-agafonov"> SOURCE </a>
+      <a id="about" onclick="loadFragment('about')"> ABOUT </a>
+      <button onclick="dark()"> <img src="crescent.svg"> </button>
+    </div>
+    <div id="content"> </div>
+  </body>
 
-  <div id="nav">
-    <button id="hamburger"> 
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <a id="projects" onclick="loadFragment('projects')"> PROJECTS </a>
-    <a id="source" target="_blank" rel="noopener noreferrer" ondragstart="return false;" href="https://github.com/sasha-agafonov"> SOURCE </a>
-    <a id="about" onclick="loadFragment('about')"> ABOUT </a>
-    
-    <button onclick="dark()"> <img src="crescent.svg"> </button>
-
-  </div>
-
-
-<div id="content"> </div>
-
-</body>
-
-<footer>
-  &copy
-  <span id="copy"> </span>
-  Sasha Agafonov
-</footer>
+  <footer>
+    &copy
+    <span id="copy"> </span>
+    Sasha Agafonov
+  </footer>
 
 </html>
 
