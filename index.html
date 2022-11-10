@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <script>
       var mode = "crescent.svg";
       var m2 = 1;
@@ -24,10 +24,10 @@
   <body>
     <div id="nav">
       <button id="hamburger"> 
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
       </button>
       <a id="projects" onclick="loadFragment('projects')"> PROJECTS </a>
       <a id="source" target="_blank" rel="noopener noreferrer" ondragstart="return false;" href="https://github.com/sasha-agafonov"> SOURCE </a>
@@ -51,8 +51,17 @@
 $(document).ready(function(){
 	$('#hamburger').click(function(){
 		$(this).toggleClass('open');
+    $("#nav").toggleClass("open-mobile", addOrRemove)
+    // $("#nav").css( "height", "300px" );
 	});
 });
+
+
+// $(document).ready(function(){
+// 	$('#hamburger').click(function(){
+     
+// 	});
+// });
 
 
 
