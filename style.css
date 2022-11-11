@@ -276,21 +276,21 @@ img {
     color: rgba(120, 120, 120 ,1);
 }
 
-.text img {
-  /* width: 12%; */
-    display:block;
-    margin: 10px auto 40px;
-    max-width: 100%;
-}
+    .text img {
+    /* width: 12%; */
+        display:block;
+        margin: 10px auto 40px;
+        max-width: 100%;
+    }
 
-.text a {
-    text-decoration: underline;
-    color: rgba(120, 120, 120 ,1);
-}
+    .text a {
+        text-decoration: underline;
+        color: rgba(120, 120, 120 ,1);
+    }
 
-.text a:visited {
-    color: rgba(120, 120, 120 ,1);
-}
+    .text a:visited {
+        color: rgba(120, 120, 120 ,1);
+    }
 
 
 #thumbnails {
