@@ -147,54 +147,18 @@ img {
 
 
 
-/* .mobile-nav {
-    height: 200px !important;
-    margin: 0 auto;
-    display: block !important;
-} */
-
-
 #nav {
     height: 30px;
     margin: 80px 0 45px;
     display: flex;
     vertical-align: top;
-    position: relative;
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-
-    --underline-width: 0;
-    --underline-offset-x: 0;
-    --underline-offset-y: 0;
-
-    --main-bg-color: black;
-    /* border: 1px solid green; */
 }
 
 
     #nav.mobile {
         height: 210px;
-        
-        
-        /* flex-grow: 1; */
     }
-
-
-    #nav::before {
-        content: "";
-        position: absolute;
-        top: 30px;
-        height: 1px;
-        transform: translateX(var(--underline-offset-x));
-        /* transform: translate(var(--underline-offset-x), var(--underline-offset-y)); */
-        
-        width: var(--underline-width);
-        background-color: var(--main-bg-color);
-        transition: transform 0.5s, width 0.5s;
-    }
-
+    
 
     #nav button {
         border: 0;
@@ -219,7 +183,41 @@ img {
 
 #nav-links {
     display: flex;
+    position: relative;
+    transition: .5s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    --underline-width: 0;
+    --underline-offset-x: 0;
+    --underline-offset-y: 0;
+    --main-bg-color: rgba(0, 0, 0, 1);
 }
+
+
+    #nav-links::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        height: 1px;
+        transform: translate(var(--underline-offset-x), var(--underline-offset-y));
+        width: var(--underline-width);
+        background-color: var(--main-bg-color);
+        transition: transform 0.5s, width 0.5s;
+    }
+
+
+
+    #nav-links.mobile::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        height: 1px;
+        transform: translate(var(--underline-offset-x), var(--underline-offset-y));
+        width: var(--underline-width);
+        background-color: var(--main-bg-color);
+   
+    }
 
 
     #nav-links a {
@@ -230,9 +228,6 @@ img {
         text-decoration: none;
         margin: 0 24px;
         cursor: pointer;
-        /* border: 1px solid red; */
-
-    
     }
 
 
@@ -248,10 +243,13 @@ img {
 
     #nav-links.mobile {
         position: absolute;
-        display: flex;
+        display: block;
         margin: 70px 0 0 0;
         flex-direction: column;
-        width: 100%;
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
         opacity: 1;
         animation: fade-in .5s linear;
         /* border: 1px solid red; */
@@ -261,15 +259,11 @@ img {
 
 
     #nav-links.mobile a {
-        display: inline-block !important;
-        /* display: inline-block !important; */
-        /* width: 100%; */
+        float: left; 
+        clear: left;
         font-size: 155%;
-        width: auto;
         margin-left: 0;
         margin: 8px 0;
-     
-
     }
 
 

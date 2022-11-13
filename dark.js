@@ -13,7 +13,7 @@ function dark() {
    // bs
   //  alert(mode);
    
-   const elem = document.getElementById("nav")
+   const elem = document.getElementById("nav-links")
    
    if (mode == "crescent.svg") {
     document.querySelector("#nav img").src = "sun.svg";
