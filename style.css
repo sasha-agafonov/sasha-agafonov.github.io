@@ -223,8 +223,7 @@ img {
         height: 1px;
         width: var(--underline-width);
         transform: translate(var(--underline-offset-x), var(--underline-offset-y));
-        /* background-color: var(--main-bg-color); */
-        background-color: black;
+        background-color: var(--main-bg-color);
         transition: none;
  
     }
