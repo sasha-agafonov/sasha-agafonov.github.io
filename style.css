@@ -199,6 +199,7 @@ img {
     --underline-offset-x: 0;
     --underline-offset-y: 0;
     --main-bg-color: rgba(0, 0, 0, 1);
+ 
 }
 
 
@@ -220,10 +221,12 @@ img {
         position: absolute;
         top: 30px;
         height: 1px;
-        transform: translate(var(--underline-offset-x), var(--underline-offset-y));
         width: var(--underline-width);
-        background-color: var(--main-bg-color);
-   
+        transform: translate(var(--underline-offset-x), var(--underline-offset-y));
+        /* background-color: var(--main-bg-color); */
+        background-color: black;
+        transition: none;
+ 
     }
 
 
@@ -462,13 +465,14 @@ img {
 
 @keyframes fade-in {
 
-    0% {
-        opacity: 0
+    from { 
+        opacity: 0; 
     }
 
-    100% { 
-        opacity: 1
+    to { 
+        opacity: 1; 
     }
+
   }
 
   @keyframes fade-out {

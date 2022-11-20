@@ -1,6 +1,8 @@
 window.onload = function () {
+    setQueryListener();
     copyright();
     dynamicUnderline();
+    
 }
 
 function dynamicUnderline() {
@@ -38,6 +40,32 @@ function dynamicUnderline() {
     });
 
 }
+
+
+
+function setQueryListener() {
+
+    var query = window.matchMedia("(max-width: 600px)");
+    // why is addListener deprecated according to vs code!?..
+    query.addListener(mediaQueryResponse);
+    mediaQueryResponse(query);
+    
+}
+
+
+function mediaQueryResponse(query) {
+
+    if (query.matches) {
+        // do (absolutely) nothing useful
+    } 
+
+    else {
+        $("#nav-links, #nav").removeClass("mobile");
+        $("#hamburger").removeClass('open');
+    }
+
+}
+
 
 
 function copyright() {
