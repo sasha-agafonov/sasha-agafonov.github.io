@@ -45,8 +45,10 @@ function dynamicUnderline() {
 
 function setQueryListener() {
 
+    // use proper variable here
     var query = window.matchMedia("(max-width: 600px)");
-    // why is addListener deprecated according to vs code!?..
+
+    // why th vs code says addListener is deprecated!?..
     query.addListener(mediaQueryResponse);
     mediaQueryResponse(query);
     
@@ -57,11 +59,21 @@ function mediaQueryResponse(query) {
 
     if (query.matches) {
         // do (absolutely) nothing useful
+        $("#thumbnails").addClass('mobile');
+        $("#nav-links").addClass('hidden');
+        $("#hamburger").addClass('visible');
     } 
 
     else {
+                // do (absolutely) nothing useful
+        $("#thumbnails").removeClass('mobile');
+        $("#nav-links").removeClass('hidden');
+        $("#hamburger").removeClass('visible');
+        // kill jqry later
         $("#nav-links, #nav").removeClass("mobile");
         $("#hamburger").removeClass('open');
+
+ 
     }
 
 }
