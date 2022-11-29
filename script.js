@@ -2,8 +2,34 @@ window.onload = function () {
     setQueryListener();
     copyright();
     dynamicUnderline();
-    
 }
+
+
+document.onload = function () {
+    inactivityTime();
+};
+
+
+ 
+var inactivityTime = function () {
+    alert("You are now logged out.");
+    var time;
+//   window.onload = resetTimer;
+    // DOM Events
+    document.onmousemove = resetTimer;
+    document.onkeydown = resetTimer;
+
+    function logout() {
+        alert("You are now logged out.");
+        //location.href = 'logout.html'
+    }
+
+    function resetTimer() {
+        clearTimeout(time);
+        time = setTimeout(logout, 10);
+        // 1000 milliseconds = 1 second
+    }
+};
 
 function dynamicUnderline() {
 
@@ -72,10 +98,7 @@ function mediaQueryResponse(query) {
         // kill jqry later
         $("#nav-links, #nav").removeClass("mobile");
         $("#hamburger").removeClass('open');
-
- 
     }
-
 }
 
 
@@ -115,4 +138,27 @@ function loadFragment(frag) {
   //       $(this).fadeIn(250);
   //     });
     });
-  }
+}
+
+// function incrementTimer() {
+//     idleTime++;
+//     if (idleTime > 2) window.location.reload();
+// }
+
+
+// function idleDetector() {
+//     $(document).ready(function () {
+//         // Increment the idle time counter every minute.
+//         var idleInterval = setInterval(incrementTimer, 60000); // 1 minute
+
+//         // Zero the idle timer on mouse movement.
+//         $(this).mousemove(function (e) {
+//             alert("reset");
+//             idleTime = 0;
+//         });
+//         $(this).keypress(function (e) {
+//             alert("reset");
+//             idleTime = 0;
+//         });
+//     });
+// }
