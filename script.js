@@ -4,32 +4,30 @@ window.onload = function () {
     dynamicUnderline();
 }
 
+var idleTime = 0;
+$(document).ready(function () {
+    var idleInterval = setInterval(timerIncrement, 6000);
 
-document.onload = function () {
-    inactivityTime();
-};
+    $(this).mousemove(function (e) {
+        idleTime = 0;
+    });
 
+    $(this).keypress(function (e) {
+        idleTime = 0;
 
- 
-var inactivityTime = function () {
-    alert("You are now logged out.");
-    var time;
-//   window.onload = resetTimer;
-    // DOM Events
-    document.onmousemove = resetTimer;
-    document.onkeydown = resetTimer;
+    });
+});
 
-    function logout() {
-        alert("You are now logged out.");
-        //location.href = 'logout.html'
+function timerIncrement() {
+    idleTime = idleTime + 1;
+    if (idleTime > 0) {
+        alert("Stp idling");
     }
+}
 
-    function resetTimer() {
-        clearTimeout(time);
-        time = setTimeout(logout, 10);
-        // 1000 milliseconds = 1 second
-    }
-};
+
+
+
 
 function dynamicUnderline() {
 
