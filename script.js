@@ -2,35 +2,35 @@ window.onload = function () {
     setQueryListener();
     copyright();
     dynamicUnderline();
+   // var childDivs = document.getElementById("thumbnails").getElementsByTagName("div");
+    idler();
 }
 
-// var childDivs = document.getElementById('thumbnails').getElementsByTagName('div');
-//alert(childDivs);
-var idleTime = 0;
+// console.log("childDivs");
 
-$(document).ready(function () {
-    var idleInterval = setInterval(timerIncrement, 600);
+function idler() {
+    var idleTime = 0;
+    setInterval(timerIncrement(idleTime), 600);
+
     $(this).mousemove(function (event) {
         idleTime = 0;
     });
     $(this).keypress(function (event) {
         idleTime = 0;
     });
-});
-
-function timerIncrement() {
-    idleTime = idleTime + 1;
-    // if (idleTime > 0) {
-    //     //alert("Stp idling");
-    //     var childDivs = document.getElementById('thumbnails').getElementsByTagName('div');
-    //     for (i = 0; i < childDivs.length; i++) {
-    //         alert("4");
-    //     }
-    // }
 }
 
 
-
+function timerIncrement(idleTime) {
+    idleTime = idleTime + 1;
+    if (idleTime > 0) {
+        //alert("Stp idling");
+        var childDivs = document.getElementById('thumbnails').getElementsByTagName('div');
+        for (i = 0; i < childDivs.length; i++) {
+            // alert("4");
+        }
+    }
+}
 
 
 function dynamicUnderline() {

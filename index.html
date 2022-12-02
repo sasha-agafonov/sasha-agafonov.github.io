@@ -14,12 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <script>
-            var mode = "crescent.svg";
-            var m2 = 1;
-        </script>
-        <!-- <script type="text/javascript" src="dark.js"></script> -->
-        <script type="text/javascript" src="script.js"></script>
+
     </head>
 
     <body>
@@ -62,17 +57,18 @@ $(document).ready(function(){
 	$('#hamburger').click(function(){
 		$(this).toggleClass('open');
         $("#nav-links, #nav").toggleClass("mobile");
-  //  $("#nav a").toggleClass("mobile-a");
-
-   //  $("#nav").addClass("mobile");
-    // $("#nav").css( "height", "300px" );
 	});
 });
-
 
 $(document).ready(function(){
   $("#content").load("/projects.html");
 });
 
-
 </script>
+
+<script>
+    var mode = "crescent.svg";
+    var m2 = 1;
+</script>
+<!-- <script type="text/javascript" src="dark.js"></script> -->
+<script type="text/javascript" src="script.js"></script>
