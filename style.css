@@ -410,6 +410,12 @@ img {
         opacity: 0;
     }
 
+    /* #thumbnails.pseudo-hover > div > div {
+        transition: 0.5s;
+        opacity: 1;
+        background-color: rgba(1, 1, 1, 0.65);
+    } */
+
 
     #thumbnails > div > div > span {
         position: absolute;
@@ -463,4 +469,13 @@ img {
     0% { 
         opacity: 0
     }
+  }
+
+
+
+  .pseudo-h {
+    transition: 0.5s;
+    opacity: 1;
+    background-color: rgba(1, 1, 1, 0.65);
+    border: 1px solid red;
   }

@@ -2,35 +2,86 @@ window.onload = function () {
     setQueryListener();
     copyright();
     dynamicUnderline();
-   // var childDivs = document.getElementById("thumbnails").getElementsByTagName("div");
-    idler();
+   // startIdler();
 }
 
-// console.log("childDivs");
+var startIdler = function() {
 
-function idler() {
-    var idleTime = 0;
-    setInterval(timerIncrement(idleTime), 600);
+    var t = 0;
+    window.onmousemove = resetTimer;
+    window.onmousedown = resetTimer;  // catches touchscreen presses as well      
+    window.ontouchstart = resetTimer; // catches touchscreen swipes as well      
+    window.ontouchmove = resetTimer;  // required by some devices 
+    window.onclick = resetTimer;      // catches touchpad clicks as well
+    window.onkeydown = resetTimer;   
+    window.addEventListener('scroll', resetTimer, true); // improved; see comments
+    console.log("started");
 
-    $(this).mousemove(function (event) {
-        idleTime = 0;
-    });
-    $(this).keypress(function (event) {
-        idleTime = 0;
-    });
-}
+    function resetTimer() {
+        t = 0;
+        t = setTimeout(startShow, 1000);
+        console.log(t);
+        // 1000 milliseconds = 1 second
+    }
 
-
-function timerIncrement(idleTime) {
-    idleTime = idleTime + 1;
-    if (idleTime > 0) {
-        //alert("Stp idling");
+    function startShow() {
         var childDivs = document.getElementById('thumbnails').getElementsByTagName('div');
-        for (i = 0; i < childDivs.length; i++) {
-            // alert("4");
+
+        for (var i = 0; i < childDivs.length; i++) {
+            //if (i >= childDivs.length) i = 0;
+            task(i);
+        }
+    
+        function task(i) {
+            setTimeout(function() {
+                
+                childDivs[i % childDivs.length].style.border = "3px solid #FF0000";
+                childDivs[i % childDivs.length].style.transition = "0.8s";
+                childDivs[i - 1 % childDivs.length].style.border = "none";
+                childDivs[i - 1 % childDivs.length].style.transition = "0.5s";
+            // Add tasks to do
+            }, 700 * i);
         }
     }
 }
+
+
+
+
+// function startIdler() {
+//     var idleTime = 0;
+//     var sss = setInterval(timerIncrement(idleTime), 1000);
+    
+//     $(this).mousemove(function (event) {
+//         idleTime = 0;
+//     });
+//     $(this).keypress(function (event) {
+//         idleTime = 0;
+//     });
+// }
+
+
+// function timerIncrement(idleTime) {
+//     // alert("xuy");
+//     // console.log("xuy");
+    
+//     if (idleTime++ > 12) {
+//         console.log(idleTime);
+
+
+
+//         // const thingies = document.getElementById('thumbnails').getElementsByTagName('div');
+//         // for (const thingy of thingies) {
+//         //     console.log(thingy);
+//         //     alert("xuy");
+//         // }
+//         // var childDivs = document.getElementById('thumbnails').getElementsByTagName('div');
+//         // for (i = 0; i < childDivs.length; i++) {
+//         //     // alert("4");
+//         //     childDivs[i].style.color = "blue";
+//         // }
+//     }
+// }
 
 
 function dynamicUnderline() {
@@ -46,19 +97,19 @@ function dynamicUnderline() {
     links.style.setProperty("--underline-offset-y", `${target_offset_y}px`);
 
     links.addEventListener("mouseover", (event) => {
-      if (event.target.tagName.toLowerCase() === "a") {
-          links.style.setProperty("--underline-width", `${event.target.offsetWidth}px`);
-          links.style.setProperty("--underline-offset-x", `${event.target.offsetLeft}px`);
-          links.style.setProperty("--underline-offset-y", `${event.target.offsetTop}px`);
-      }
+        if (event.target.tagName.toLowerCase() === "a") {
+            links.style.setProperty("--underline-width", `${event.target.offsetWidth}px`);
+            links.style.setProperty("--underline-offset-x", `${event.target.offsetLeft}px`);
+            links.style.setProperty("--underline-offset-y", `${event.target.offsetTop}px`);
+        }
     });
 
     links.addEventListener("click", (event) => {
-      if (event.target.tagName.toLowerCase() === "a" && event.target.id !== "source") {
-          target_width = event.target.offsetWidth;
-          target_offset_x = event.target.offsetLeft;
-          target_offset_y = event.target.offsetTop;
-      }
+        if (event.target.tagName.toLowerCase() === "a" && event.target.id !== "source") {
+            target_width = event.target.offsetWidth;
+            target_offset_x = event.target.offsetLeft;
+            target_offset_y = event.target.offsetTop;
+        }
     });
 
     links.addEventListener("mouseleave", () => {
@@ -66,7 +117,6 @@ function dynamicUnderline() {
         links.style.setProperty("--underline-offset-x", `${target_offset_x}px`);
         links.style.setProperty("--underline-offset-y", `${target_offset_y}px`);
     });
-
 }
 
 
