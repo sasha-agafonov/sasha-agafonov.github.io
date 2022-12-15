@@ -186,6 +186,7 @@ function dark() {
 function loadFragment(frag) {
     $(document).ready(function() {
         $("#content").load("/" + frag + ".html",function(){}).hide().fadeIn(500);
+        window.scrollTo(top);
   //     $("#content").fadeOut(250).load("/" + frag + ".html", function(response, status, xhr) {
   //       $(this).fadeIn(250);
   //     });
