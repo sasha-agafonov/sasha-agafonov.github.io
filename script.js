@@ -1,7 +1,12 @@
+var mobile = false;
+var mode = "crescent.svg";
+var m2 = 1;
+
 window.onload = function () {
     setQueryListener();
     copyright();
     dynamicUnderline();
+    loadIndex();
    // startIdler();
 }
 
@@ -136,6 +141,7 @@ function setQueryListener() {
 function mediaQueryResponse(query) {
 
     if (query.matches) {
+        mobile = true;
         // do (absolutely) nothing useful
         $("#thumbnails").addClass('mobile');
         $("#nav-links").addClass('hidden');
@@ -143,6 +149,7 @@ function mediaQueryResponse(query) {
     } 
 
     else {
+        mobile = false;
                 // do (absolutely) nothing useful
         $("#thumbnails").removeClass('mobile');
         $("#nav-links").removeClass('hidden');
@@ -185,6 +192,7 @@ function dark() {
 
 function loadFragment(frag) {
     $(document).ready(function() {
+        // if (mobile) 
         $("#content").load("/" + frag + ".html",function(){}).hide().fadeIn(500);
         window.scrollTo(top);
   //     $("#content").fadeOut(250).load("/" + frag + ".html", function(response, status, xhr) {
@@ -215,3 +223,18 @@ function loadFragment(frag) {
 //         });
 //     });
 // }
+
+function loadIndex() {
+    $(document).ready(function(){
+        $("#content").load("/projects.html");
+      });
+}
+
+function openMobileMenu() {
+    $(document).ready(function(){
+        $('#hamburger').click(function(){
+            $(this).toggleClass('open');
+            $("#nav-links, #nav").toggleClass("mobile");
+        });
+    });
+}
