@@ -8,6 +8,75 @@ window.onload = function () {
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————
 
+// class idler {
+//     constructor() {
+
+//         let time;
+//         const events = ["mousedown", "mousemove", "keypress", "scroll", "touchstart"];
+    
+//         events.forEach(event => {
+//             document.addEventListener(event, () => {
+//                 resetTimer();
+//                 stopShow();
+//             }, true)
+//         });
+    
+//         function resetTimer() {
+//             clearTimeout(time);
+//             time = setTimeout(prepareForSurprise, 60000);
+//         }
+    
+//         function prepareForSurprise() {
+//             (document.getElementById("thumbnails") ? startShow() : resetTimer);
+//         }
+
+//     }
+
+//     resetTimer() {
+
+//     }
+
+//     prepareForSuprise() {
+
+//     }
+
+//     time = 0;
+
+
+// }
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
+
+// class showController {
+
+//     startShow() {
+
+//     }
+
+//     stopShow() {
+
+//     }
+
+//     async sequence() {
+
+//     }
+
+//     async snake() {
+
+//     }
+
+//     async burst() {
+
+//     }
+
+//     async disarray() {
+
+//     }
+
+// }
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
+
 function setQueryListener() {
 
     // use proper variable here
