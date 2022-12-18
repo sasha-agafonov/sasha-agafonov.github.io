@@ -1,97 +1,12 @@
-var mobile = false;
-var mode = "crescent.svg";
-var m2 = 1;
-
 window.onload = function () {
     setQueryListener();
     copyright();
     dynamicUnderline();
     loadIndex(); // just use loadfrag ffs
-   // startIdler();
+    setIdler();
 }
 
-var startIdler = function() {
-
-    var t = 0;
-    window.onmousemove = resetTimer;
-    window.onmousedown = resetTimer;  // catches touchscreen presses as well      
-    window.ontouchstart = resetTimer; // catches touchscreen swipes as well      
-    window.ontouchmove = resetTimer;  // required by some devices 
-    window.onclick = resetTimer;      // catches touchpad clicks as well
-    window.onkeydown = resetTimer;   
-    window.addEventListener('scroll', resetTimer, true); // improved; see comments
-    console.log("started");
-
-    function resetTimer() {
-        t = 0;
-        t = setTimeout(startShow, 1000);
-        console.log(t);
-        // 1000 milliseconds = 1 second
-    }
-
-    function startShow() {
-        var childDivs = document.getElementById('thumbnails').getElementsByTagName('div');
-
-        for (var i = 0; i < childDivs.length; i++) {
-            //if (i >= childDivs.length) i = 0;
-            task(i);
-        }
-    
-        function task(i) {
-            setTimeout(function() {
-                
-                childDivs[i % childDivs.length].style.border = "3px solid #FF0000";
-                childDivs[i % childDivs.length].style.transition = "0.8s";
-                childDivs[i - 1 % childDivs.length].style.border = "none";
-                childDivs[i - 1 % childDivs.length].style.transition = "0.5s";
-            // Add tasks to do
-            }, 700 * i);
-        }
-    }
-}
-
-
-
-
-// function startIdler() {
-//     var idleTime = 0;
-//     var sss = setInterval(timerIncrement(idleTime), 1000);
-    
-//     $(this).mousemove(function (event) {
-//         idleTime = 0;
-//     });
-//     $(this).keypress(function (event) {
-//         idleTime = 0;
-//     });
-// }
-
-
-// function timerIncrement(idleTime) {
-//     // alert("xuy");
-//     // console.log("xuy");
-    
-//     if (idleTime++ > 12) {
-//         console.log(idleTime);
-
-
-
-//         // const thingies = document.getElementById('thumbnails').getElementsByTagName('div');
-//         // for (const thingy of thingies) {
-//         //     console.log(thingy);
-//         //     alert("xuy");
-//         // }
-//         // var childDivs = document.getElementById('thumbnails').getElementsByTagName('div');
-//         // for (i = 0; i < childDivs.length; i++) {
-//         //     // alert("4");
-//         //     childDivs[i].style.color = "blue";
-//         // }
-//     }
-// }
-
-
-
-
-
+//——————————————————————————————————————————————————————————————————————————————————————————————————
 
 function setQueryListener() {
 
@@ -104,6 +19,7 @@ function setQueryListener() {
     
 }
 
+//——————————————————————————————————————————————————————————————————————————————————————————————————
 
 function mediaQueryResponse(query) {
 
@@ -127,10 +43,7 @@ function mediaQueryResponse(query) {
     }
 }
 
-
-
-
-
+//——————————————————————————————————————————————————————————————————————————————————————————————————
 
 function loadFragment(frag) {
     $(document).ready(function() {
@@ -143,50 +56,15 @@ function loadFragment(frag) {
     });
 }
 
-// function incrementTimer() {
-//     idleTime++;
-//     if (idleTime > 2) window.location.reload();
-// }
-
-
-// function idleDetector() {
-//     $(document).ready(function () {
-//         // Increment the idle time counter every minute.
-//         var idleInterval = setInterval(incrementTimer, 60000); // 1 minute
-
-//         // Zero the idle timer on mouse movement.
-//         $(this).mousemove(function (e) {
-//             alert("reset");
-//             idleTime = 0;
-//         });
-//         $(this).keypress(function (e) {
-//             alert("reset");
-//             idleTime = 0;
-//         });
-//     });
-// }
+//——————————————————————————————————————————————————————————————————————————————————————————————————
 
 function loadIndex() {
     $(document).ready(function(){
         $("#content").load("/projects.html");
-      });
+    });
 }
 
-
-
-
-
-
-
-
-
-
-
-function startIdler() {
-
-
-}
-
+//——————————————————————————————————————————————————————————————————————————————————————————————————
 
 function copyright() {
 
@@ -194,6 +72,7 @@ function copyright() {
 
 }
 
+//——————————————————————————————————————————————————————————————————————————————————————————————————
 
 function toggleMobileMenu() {
 
@@ -202,6 +81,7 @@ function toggleMobileMenu() {
 
 }
 
+//——————————————————————————————————————————————————————————————————————————————————————————————————
 
 function closeMobileMenuIfOpen() {
 
@@ -210,14 +90,15 @@ function closeMobileMenuIfOpen() {
 
 }
 
+//——————————————————————————————————————————————————————————————————————————————————————————————————
 
 function dark() {
 
-    const elems = document.querySelectorAll('#nav *');
+    const elems = document.querySelectorAll("#nav *");
     elems.forEach(elem => elem.classList.toggle("dark-mode-txt"));
 
     document.body.classList.toggle("dark-mode-bg");
-    mode = document.querySelector("#nav img").src.replace(/^.*[\\\/]/, '');
+    const mode = document.querySelector("#nav img").src.replace(/^.*[\\\/]/, '');
     const elem = document.getElementById("nav-links")
 
     if (mode == "crescent.svg") {
@@ -231,6 +112,7 @@ function dark() {
 
 }
 
+//——————————————————————————————————————————————————————————————————————————————————————————————————
 
 function dynamicUnderline() {
 
@@ -266,3 +148,85 @@ function dynamicUnderline() {
         links.style.setProperty("--underline-offset-y", `${target_offset_y}px`);
     });
 }
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
+
+function setIdler() {
+
+    let time;
+    const events = ["mousedown", "mousemove", "keypress", "scroll", "touchstart"];
+
+    events.forEach(event => {
+        document.addEventListener(event, () => {
+            resetTimer();
+            stopShow();
+        }, true)
+    });
+
+    function resetTimer() {
+        clearTimeout(time);
+        time = setTimeout(prepareForSurprise, 60000);
+    }
+
+    function prepareForSurprise() {
+        (document.getElementById("thumbnails") ? startShow() : resetTimer);
+    }
+
+}
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
+
+function startShow() {
+    sequence();
+    // do some clever shit here
+}
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
+
+function stopShow() {
+    const elems = document.querySelectorAll("#thumbnails > div > div");
+    elems.forEach(elem => elem.classList.remove("pseudo-hover"));
+}
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
+
+async function sequence() {
+
+    let elems = document.querySelectorAll("#thumbnails > div > div");
+    let i = 0;
+
+    while (true) {
+        await new Promise(resolve => setTimeout(resolve, 300));
+        elems[i++ % elems.length].classList.toggle("pseudo-hover");
+    }
+
+}
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
+
+async function snake() {
+
+    let elems = document.querySelectorAll("#thumbnails > div > div");
+    let i = 0;
+
+}
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
+
+async function disarray() {
+
+    let elems = document.querySelectorAll("#thumbnails > div > div");
+    let i = 0;
+
+}
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
+
+async function burst() {
+
+    let elems = document.querySelectorAll("#thumbnails > div > div");
+    let i = 0;
+
+}
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
