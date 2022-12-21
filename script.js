@@ -3,77 +3,77 @@ window.onload = function () {
     copyright();
     dynamicUnderline();
     loadIndex(); // just use loadfrag ffs
-    setIdler();
+    let idler = new Idler();
+ 
 }
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————
 
-// class idler {
-//     constructor() {
 
-//         let time;
-//         const events = ["mousedown", "mousemove", "keypress", "scroll", "touchstart"];
-    
-//         events.forEach(event => {
-//             document.addEventListener(event, () => {
-//                 resetTimer();
-//                 stopShow();
-//             }, true)
-//         });
-    
-//         function resetTimer() {
-//             clearTimeout(time);
-//             time = setTimeout(prepareForSurprise, 60000);
-//         }
-    
-//         function prepareForSurprise() {
-//             (document.getElementById("thumbnails") ? startShow() : resetTimer);
-//         }
+class Idler {
 
-//     }
+    constructor() {
+        this.time = 0;
+        this.showController = new ShowController();
+        const events = ["mousedown", "mousemove", "keypress", "scroll", "touchstart"];
 
-//     resetTimer() {
+        events.forEach(event => {
+            document.addEventListener(event, () => {
+                this.resetTimer();
+                this.showController.stopShow();
+            }, true)
+        });
+    }
 
-//     }
+    resetTimer() {
+        clearTimeout(this.time);
+        this.time = setTimeout(() => {
+            (document.getElementById("thumbnails") ? this.showController.startShow() : this.resetTimer);
+        }, 60000);
+    }
 
-//     prepareForSuprise() {
-
-//     }
-
-//     time = 0;
-
-
-// }
+}
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————
 
-// class showController {
+class ShowController {
 
-//     startShow() {
+    startShow() {
+        this.shouldShowShow = true;
+        (Math.floor(Math.random() * 2) == 0 ? this.sequence() : this.blinking());
+    }
 
-//     }
+    stopShow() {
+        this.shouldShowShow = false;
+        const elems = document.querySelectorAll("#thumbnails > div > div");
+        elems.forEach(elem => elem.classList.remove("pseudo-hover"));
+    }
 
-//     stopShow() {
+    async sequence() {
+        let elems = document.querySelectorAll("#thumbnails > div > div");
+        let i = 0;
 
-//     }
+        while (this.shouldShowShow) {
+            elems[i++ % elems.length].classList.toggle("pseudo-hover");
+            await new Promise(resolve => setTimeout(resolve, 300));
+        }
+    }
 
-//     async sequence() {
+    async blinking() {
+        let elems = document.querySelectorAll("#thumbnails > div > div");
 
-//     }
+        while (this.shouldShowShow) {
+            elems.forEach(elem => elem.classList.toggle("pseudo-hover"));
+            await new Promise(resolve => setTimeout(resolve, 600));
+        }
+    }
 
-//     async snake() {
+    // async disarray() {
 
-//     }
+    // }
 
-//     async burst() {
 
-//     }
-
-//     async disarray() {
-
-//     }
-
-// }
+}
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————
 
@@ -220,82 +220,82 @@ function dynamicUnderline() {
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————
 
-function setIdler() {
+// function setIdler() {
 
-    let time;
-    const events = ["mousedown", "mousemove", "keypress", "scroll", "touchstart"];
+//     let time;
+//     const events = ["mousedown", "mousemove", "keypress", "scroll", "touchstart"];
 
-    events.forEach(event => {
-        document.addEventListener(event, () => {
-            resetTimer();
-            stopShow();
-        }, true)
-    });
+//     events.forEach(event => {
+//         document.addEventListener(event, () => {
+//             resetTimer();
+//             stopShow();
+//         }, true)
+//     });
 
-    function resetTimer() {
-        clearTimeout(time);
-        time = setTimeout(prepareForSurprise, 60000);
-    }
+//     function resetTimer() {
+//         clearTimeout(time);
+//         time = setTimeout(prepareForSurprise, 60000);
+//     }
 
-    function prepareForSurprise() {
-        (document.getElementById("thumbnails") ? startShow() : resetTimer);
-    }
+//     function prepareForSurprise() {
+//         (document.getElementById("thumbnails") ? startShow() : resetTimer);
+//     }
 
-}
+// }
 
-//——————————————————————————————————————————————————————————————————————————————————————————————————
+// //——————————————————————————————————————————————————————————————————————————————————————————————————
 
-function startShow() {
-    sequence();
-    // do some clever shit here
-}
+// function startShow() {
+//     sequence();
+//     // do some clever shit here
+// }
 
-//——————————————————————————————————————————————————————————————————————————————————————————————————
+// //——————————————————————————————————————————————————————————————————————————————————————————————————
 
-function stopShow() {
-    const elems = document.querySelectorAll("#thumbnails > div > div");
-    elems.forEach(elem => elem.classList.remove("pseudo-hover"));
-}
+// function stopShow() {
+//     const elems = document.querySelectorAll("#thumbnails > div > div");
+//     elems.forEach(elem => elem.classList.remove("pseudo-hover"));
+// }
 
-//——————————————————————————————————————————————————————————————————————————————————————————————————
+// //——————————————————————————————————————————————————————————————————————————————————————————————————
 
-async function sequence() {
+// async function sequence() {
 
-    let elems = document.querySelectorAll("#thumbnails > div > div");
-    let i = 0;
+//     let elems = document.querySelectorAll("#thumbnails > div > div");
+//     let i = 0;
 
-    while (true) {
-        await new Promise(resolve => setTimeout(resolve, 300));
-        elems[i++ % elems.length].classList.toggle("pseudo-hover");
-    }
+//     while (true) {
+//         await new Promise(resolve => setTimeout(resolve, 300));
+//         elems[i++ % elems.length].classList.toggle("pseudo-hover");
+//     }
 
-}
+// }
 
-//——————————————————————————————————————————————————————————————————————————————————————————————————
+// //——————————————————————————————————————————————————————————————————————————————————————————————————
 
-async function snake() {
+// async function snake() {
 
-    let elems = document.querySelectorAll("#thumbnails > div > div");
-    let i = 0;
+//     let elems = document.querySelectorAll("#thumbnails > div > div");
+//     let i = 0;
 
-}
+// }
 
-//——————————————————————————————————————————————————————————————————————————————————————————————————
+// //——————————————————————————————————————————————————————————————————————————————————————————————————
 
-async function disarray() {
+// async function disarray() {
 
-    let elems = document.querySelectorAll("#thumbnails > div > div");
-    let i = 0;
+//     let elems = document.querySelectorAll("#thumbnails > div > div");
+//     let i = 0;
 
-}
+// }
 
-//——————————————————————————————————————————————————————————————————————————————————————————————————
+// //——————————————————————————————————————————————————————————————————————————————————————————————————
 
-async function burst() {
+// async function burst() {
 
-    let elems = document.querySelectorAll("#thumbnails > div > div");
-    let i = 0;
+//     let elems = document.querySelectorAll("#thumbnails > div > div");
+//     let i = 0;
 
-}
+// }
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————
