@@ -407,17 +407,17 @@ img {
         opacity: 0;
     }
 
-    /* #thumbnails > div > div.pseudo-hover {
-      --transition: 0s;
-        transition: var(--transition);
-        opacity: 1;
-    } */
-
-    #thumbnails.pseudo-hover > div > div {
+    #thumbnails > div > div.pseudo-hover {
         transition: 0.5s;
         opacity: 1;
         background-color: rgba(1, 1, 1, 0.65);
     }
+
+    /* #thumbnails.pseudo-hover > div > div {
+        transition: 0.5s;
+        opacity: 1;
+        background-color: rgba(1, 1, 1, 0.65);
+    } */
 
 
     #thumbnails > div > div > span {

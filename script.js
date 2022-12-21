@@ -18,6 +18,7 @@ class Idler {
         const events = ["mousedown", "mousemove", "keypress", "scroll", "touchstart"];
 
         events.forEach(event => {
+            // alert("sss");
             document.addEventListener(event, () => {
                 this.resetTimer();
                 this.showController.stopShow();
@@ -26,6 +27,7 @@ class Idler {
     }
 
     resetTimer() {
+        // alert("sss");
         clearTimeout(this.time);
         this.time = setTimeout(() => {
             (document.getElementById("thumbnails") ? this.showController.startShow() : this.resetTimer);
@@ -50,6 +52,7 @@ class ShowController {
     }
 
     async sequence() {
+      //   alert("sss");
         let elems = document.querySelectorAll("#thumbnails > div > div");
         let i = 0;
 
