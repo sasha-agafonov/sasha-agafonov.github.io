@@ -18,7 +18,6 @@ class Idler {
         const events = ["mousedown", "mousemove", "keypress", "scroll", "touchstart"];
 
         events.forEach(event => {
-            // alert("sss");
             document.addEventListener(event, () => {
                 this.resetTimer();
                 this.showController.stopShow();
@@ -27,7 +26,6 @@ class Idler {
     }
 
     resetTimer() {
-        // alert("sss");
         clearTimeout(this.time);
         this.time = setTimeout(() => {
             (document.getElementById("thumbnails") ? this.showController.startShow() : this.resetTimer);
@@ -40,9 +38,40 @@ class Idler {
 
 class ShowController {
 
+    constructor() {
+        const elems = document.querySelectorAll("#thumbnails > div > div");
+
+        this.next = 0;
+        this.next = Math.floor(Math.random() * elems.length);
+        this.previous = this.next;
+
+        this.choice = 0;
+
+    }
+
     startShow() {
         this.shouldShowShow = true;
-        (Math.floor(Math.random() * 2) == 0 ? this.sequence() : this.blinking());
+        this.choice = Math.floor(Math.random() * 4);
+
+        switch (this.choice) {
+            case 0:
+                this.blinking();
+                break;
+           
+            case 1:
+                this.disarray();
+                break;
+                
+            case 2:
+                this.sequence();
+                break;
+                
+            case 3:
+                this.sequence();
+                break;
+                
+            default: console.log("if this ever executes please quit proframming immediatly");
+        }
     }
 
     stopShow() {
@@ -52,7 +81,6 @@ class ShowController {
     }
 
     async sequence() {
-      //   alert("sss");
         let elems = document.querySelectorAll("#thumbnails > div > div");
         let i = 0;
 
@@ -71,11 +99,26 @@ class ShowController {
         }
     }
 
-    // async disarray() {
+    async disarray() {
+        let elems = document.querySelectorAll("#thumbnails > div > div");
 
-    // }
+        elems[this.previous].classList.toggle("pseudo-hover");
+        
+        while(this.shouldShowShow) {
 
+            while (this.previous == this.next) this.next = Math.floor(Math.random() * elems.length);
 
+            elems[this.previous].classList.toggle("pseudo-hover");
+            elems[this.next].classList.toggle("pseudo-hover");
+            this.previous = this.next;
+
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+    }
+
+    async train() {
+
+    }
 }
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————
