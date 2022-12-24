@@ -70,7 +70,7 @@ class ShowController {
                 this.sequence();
                 break;
                 
-            default: console.log("if this ever executes please quit proframming immediatly");
+            default: console.log("if this ever executes please quit programming immediately");
         }
     }
 
@@ -117,6 +117,12 @@ class ShowController {
     }
 
     async train() {
+        let elems = document.querySelectorAll("#thumbnails > div > div");
+        elems[this.previous].classList.toggle("pseudo-hover");
+        
+        while(this.shouldShowShow) {
+
+        }
 
     }
 }
