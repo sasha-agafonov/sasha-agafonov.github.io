@@ -4,6 +4,7 @@ window.onload = function () {
     dynamicUnderline();
     loadIndex(); // just use loadfrag ffs
     let idler = new Idler();
+
  
 }
 
@@ -171,9 +172,6 @@ function loadFragment(frag) {
         closeMobileMenuIfOpen();
         $("#content").load("/" + frag + ".html",function(){}).hide().fadeIn(500);
         window.scrollTo(top);
-  //     $("#content").fadeOut(250).load("/" + frag + ".html", function(response, status, xhr) {
-  //       $(this).fadeIn(250);
-  //     });
     });
 }
 
@@ -190,6 +188,28 @@ function loadIndex() {
 function copyright() {
 
     document.getElementById("copy").innerHTML = new Date().getFullYear();
+
+}
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
+
+function glNonsense() {
+    alert("month");
+    let date = new Date();
+    let month = date.getUTCMonth() + 1;
+    let day = date.getUTCDate();
+
+    let nonsenseObject = document.getElementById("gl-nonsense");
+    // console.log(month);
+    alert(month);
+    alert(day);
+
+    if (month == 12 && day == 31) nonsenseObject.innerHTML = "glHappyNewYear();"
+    else if (month == 12 && day == 25) nonsenseObject.innerHTML = "glMerryChristmas();"
+    else nonsenseObject.innerHTML = "glGoodLuck();"
+    //.textContent += " this has just been added";
+
+    // nonsenceObject.innerHTML = ((month == 12 && day == 31) ? "glHappyNewYear();" : "glGoodLuck();");
 
 }
 
