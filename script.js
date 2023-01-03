@@ -194,22 +194,20 @@ function copyright() {
 //——————————————————————————————————————————————————————————————————————————————————————————————————
 
 function glNonsense() {
-    alert("month");
-    let date = new Date();
-    let month = date.getUTCMonth() + 1;
-    let day = date.getUTCDate();
+
+    const date = new Date();
+    const month = date.getUTCMonth() + 1;
+    const dayOfMonth = date.getUTCDate();
+    const dayOfWeek = date.getDay() + 1;
 
     let nonsenseObject = document.getElementById("gl-nonsense");
-    // console.log(month);
-    alert(month);
-    alert(day);
 
-    if (month == 12 && day == 31) nonsenseObject.innerHTML = "glHappyNewYear();"
-    else if (month == 12 && day == 25) nonsenseObject.innerHTML = "glMerryChristmas();"
+    if (dayOfMonth == 13 && dayOfWeek == 5) nonsenseObject.innerHTML = "glFridayThe13th();"
+    else if (month == 12 && dayOfMonth == 25) nonsenseObject.innerHTML = "glMerryChristmas();"
+    else if ((month == 12 && dayOfMonth == 31) || (month == 1 && dayOfMonth == 1)) nonsenseObject.innerHTML = "glHappyNewYear();"
+    else if (month == 1 && dayOfMonth == 7) nonsenseObject.innerHTML = "glMerryOrthodoxChristmas();"
+    else if (month == 2 && dayOfMonth == 14) nonsenseObject.innerHTML = "glHappyValentinesDay();"
     else nonsenseObject.innerHTML = "glGoodLuck();"
-    //.textContent += " this has just been added";
-
-    // nonsenceObject.innerHTML = ((month == 12 && day == 31) ? "glHappyNewYear();" : "glGoodLuck();");
 
 }
 
