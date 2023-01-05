@@ -202,7 +202,7 @@ function glNonsense() {
 
     let nonsenseObject = document.getElementById("gl-nonsense");
 
-    if (dayOfMonth == 13 && dayOfWeek == 5) nonsenseObject.innerHTML = "glFridayThe13th();"
+    if (dayOfMonth == 13 && dayOfWeek == 5) nonsenseObject.innerHTML = "glItsFriday(13);"
     else if (month == 12 && dayOfMonth == 25) nonsenseObject.innerHTML = "glMerryChristmas();"
     else if ((month == 12 && dayOfMonth == 31) || (month == 1 && dayOfMonth == 1)) nonsenseObject.innerHTML = "glHappyNewYear();"
     else if (month == 1 && dayOfMonth == 7) nonsenseObject.innerHTML = "glMerryOrthodoxChristmas();"
