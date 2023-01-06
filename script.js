@@ -196,17 +196,20 @@ function copyright() {
 function glNonsense() {
 
     const date = new Date();
+    const year = date.getFullYear();
     const month = date.getUTCMonth() + 1;
     const dayOfMonth = date.getUTCDate();
     const dayOfWeek = date.getDay() + 1;
 
     let nonsenseObject = document.getElementById("gl-nonsense");
 
-    if (dayOfMonth == 13 && dayOfWeek == 5) nonsenseObject.innerHTML = "glItsFriday(13);"
+    if (dayOfWeek == 13 && dayOfMonth == 5) nonsenseObject.innerHTML = "glFriday(13);"
     else if (month == 12 && dayOfMonth == 25) nonsenseObject.innerHTML = "glMerryChristmas();"
-    else if ((month == 12 && dayOfMonth == 31) || (month == 1 && dayOfMonth == 1)) nonsenseObject.innerHTML = "glHappyNewYear();"
+    else if ((month == 12 && dayOfMonth == 31) || (month == 1 && dayOfMonth == 1)) nonsenseObject.innerHTML = "glHappyNewYear(" + year + ");"
     else if (month == 1 && dayOfMonth == 7) nonsenseObject.innerHTML = "glMerryOrthodoxChristmas();"
     else if (month == 2 && dayOfMonth == 14) nonsenseObject.innerHTML = "glHappyValentinesDay();"
+    else if (month == 3 && dayOfMonth == 8) nonsenseObject.innerHtml = "glHappyWomensDay();"
+    else if (month == 10 && dayOfMonth == 31) nonsenseObject.innerHTML = "glHappyHalloween();"
     else nonsenseObject.innerHTML = "glGoodLuck();"
 
 }
