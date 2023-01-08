@@ -316,6 +316,7 @@ img {
 }
 
 
+
     .text p {
         color: rgba(120, 120, 120 ,1);
         font-family: "Roboto";
@@ -324,6 +325,86 @@ img {
         padding-top: 20px;
         line-height: 175%;
     }
+
+
+
+    .callback {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+
+    .callback > * {
+        border: 2px solid rgba(120, 120, 120 , 1);
+        border-radius: 10px;
+        font-family: "Roboto";
+        font-weight: 700;
+        font-size: 135%;
+        padding-left: 12px;
+        height: 40px;
+        line-height: 20px;
+    }
+
+    .callback > div {
+        outline: 0px solid transparent;
+    }
+
+    .callback > div:focus  {
+        border-color: var(--main-bg-color);
+    }
+
+    .callback > div:not(.oneliner) {
+        height: auto;
+        min-height: 40px;
+        grid-column: 1 / -1;
+    }
+
+    
+
+
+    [contentEditable="true"]:empty:not(:focus):before {
+        content: attr(data-ph);
+        color: rgba(120, 120, 120 , 1);
+    }
+
+    [contenteditable="true"].oneliner {
+        overflow: hidden;
+        white-space: nowrap;
+    } 
+
+    [contenteditable="true"].oneliner br {
+        display: none;
+    }
+
+    [contenteditable="true"].oneliner * {
+        display: inline;
+        white-space: nowrap;
+    }
+
+    .callback button {
+        background-color: transparent;
+        border: 2px solid rgba(120, 120, 120 , 1);
+        color: rgba(120, 120, 120 , 1);
+        border-radius: 10px;
+        font-family: "Roboto";
+        font-weight: 700;
+        font-size: 135%;
+        grid-column: 1 / -1;
+        cursor: pointer;
+    }
+
+    .callback button:hover {
+        border: 2px solid;
+        color: var(--main-bg-color);
+    }
+
+
+    .text > form > div[contenteditable=true]:empty:before{
+        content: attr(placeholder);
+        pointer-events: none;
+        display: block; /* For Firefox */
+      } 
 
     .text h1 {
         font-size: 230%;
