@@ -379,7 +379,12 @@ function dynamicUnderline() {
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————
 
+function callback() {
 
+    let elems = document.querySelectorAll("#callback > div");
+    elems.forEach(elem => elem.innerHTML = "");
+
+}
 
 
 
