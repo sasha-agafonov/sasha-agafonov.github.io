@@ -209,13 +209,13 @@ function glNonsense() {
 
     let nonsenseObject = document.getElementById("gl-nonsense");
 
-    if (dayOfWeek == 13 && dayOfMonth == 5) nonsenseObject.innerHTML = "glFriday(13);"
-    else if (month == 12 && dayOfMonth == 25) nonsenseObject.innerHTML = "glMerryChristmas();"
-    else if ((month == 12 && dayOfMonth == 31) || (month == 1 && dayOfMonth == 1)) nonsenseObject.innerHTML = "glHappyNewYear(" + year + ");"
-    else if (month == 1 && dayOfMonth == 7) nonsenseObject.innerHTML = "glMerryOrthodoxChristmas();"
-    else if (month == 2 && dayOfMonth == 14) nonsenseObject.innerHTML = "glHappyValentinesDay();"
-    else if (month == 3 && dayOfMonth == 8) nonsenseObject.innerHtml = "glHappyWomensDay();"
-    else if (month == 10 && dayOfMonth == 31) nonsenseObject.innerHTML = "glHappyHalloween();"
+    if (dayOfWeek === 13 && dayOfMonth === 5) nonsenseObject.innerHTML = "glFriday(13);"
+    else if (month === 12 && dayOfMonth === 25) nonsenseObject.innerHTML = "glMerryChristmas();"
+    else if ((month === 12 && dayOfMonth === 31) || (month === 1 && dayOfMonth === 1)) nonsenseObject.innerHTML = "glHappyNewYear(" + year + ");"
+    else if (month === 1 && dayOfMonth === 7) nonsenseObject.innerHTML = "glMerryOrthodoxChristmas();"
+    else if (month === 2 && dayOfMonth === 14) nonsenseObject.innerHTML = "glHappyValentinesDay();"
+    else if (month === 3 && dayOfMonth === 8) nonsenseObject.innerHtml = "glHappyWomensDay();"
+    else if (month === 10 && dayOfMonth === 31) nonsenseObject.innerHTML = "glHappyHalloween();"
     else nonsenseObject.innerHTML = "glGoodLuck();"
 
 }

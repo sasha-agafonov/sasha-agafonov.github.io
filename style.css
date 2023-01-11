@@ -342,15 +342,14 @@ img {
         font-family: "Roboto";
         font-weight: 700;
         font-size: 135%;
-        padding-left: 12px;
         height: 40px;
-        line-height: 20px;
     }
 
 
     #callback > div {
         outline: 0px solid transparent;
-        line-height: 200%
+        line-height: 120%;
+        padding-left: 12px;
     }
 
 
@@ -391,14 +390,10 @@ img {
 
     #callback button {
         background-color: transparent;
-        border: 2px solid rgba(120, 120, 120 , 1);
         color: rgba(120, 120, 120 , 1);
-        border-radius: 10px;
-        font-family: "Roboto";
-        font-weight: 700;
-        font-size: 135%;
         grid-column: 1 / -1;
         cursor: pointer;
+        height: 40px;
     }
 
 
