@@ -16,7 +16,6 @@ window.onload = function () {
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————
 
-
 class Idler {
 
     constructor() {
@@ -53,7 +52,6 @@ class ShowController {
         this.previous = this.next;
 
         this.choice = 0;
-
     }
 
     startShow() {
@@ -205,11 +203,11 @@ function glNonsense() {
     const year = date.getFullYear();
     const month = date.getUTCMonth() + 1;
     const dayOfMonth = date.getUTCDate();
-    const dayOfWeek = date.getDay() + 1;
+    const dayOfWeek = date.getDay();
 
     let nonsenseObject = document.getElementById("gl-nonsense");
 
-    if (dayOfWeek === 13 && dayOfMonth === 5) nonsenseObject.innerHTML = "glFriday(13);"
+    if (dayOfWeek === 5 && dayOfMonth === 13) nonsenseObject.innerHTML = "glFriday(13);"
     else if (month === 12 && dayOfMonth === 25) nonsenseObject.innerHTML = "glMerryChristmas();"
     else if ((month === 12 && dayOfMonth === 31) || (month === 1 && dayOfMonth === 1)) nonsenseObject.innerHTML = "glHappyNewYear(" + year + ");"
     else if (month === 1 && dayOfMonth === 7) nonsenseObject.innerHTML = "glMerryOrthodoxChristmas();"
