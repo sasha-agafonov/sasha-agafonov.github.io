@@ -380,11 +380,22 @@ function dynamicUnderline() {
 function callback() {
 
     let elems = document.querySelectorAll("#callback > div");
+    let breaker = 0;
+    let counter = 0;
+
+    elems.forEach(elem, () => {
+        ++counter;
+        if (elem.innerHTML) ++breaker;
+    });
+
+    if (breaker !== counter) {
+        alert("Please fill all fields.")
+    }
+    else {
+        alert("Success.")
+    }
     elems.forEach(elem => elem.innerHTML = "");
-
 }
-
-
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————
 
