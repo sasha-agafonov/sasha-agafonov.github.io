@@ -297,6 +297,16 @@ function dynamicUnderline() {
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————
 
+function scroller(element) {
+    
+    var headers = document.querySelectorAll(".description h2");
+    headers.forEach(header => {
+        if (header.textContent == element.textContent) header.scrollIntoView({behavior: "smooth"});
+    });
+}
+
+//——————————————————————————————————————————————————————————————————————————————————————————————————
+
 // function setIdler() {
 
 //     let time;

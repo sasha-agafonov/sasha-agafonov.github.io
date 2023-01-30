@@ -315,19 +315,6 @@ img {
     transition: color 0.3s ease; */
 }
 
-
-
-    .text p {
-        color: rgba(120, 120, 120 ,1);
-        font-family: "Roboto";
-        font-weight: 700;
-        font-size: 135%;
-        padding-top: 20px;
-        line-height: 175%;
-    }
-
-
-
     #callback {
         margin-top: 50px;
         display: grid;
@@ -403,14 +390,15 @@ img {
     }
 
 
-    .text > form > div[contenteditable=true]:empty:before{
+
+    .project > form > div[contenteditable=true]:empty:before{
         content: attr(placeholder);
         pointer-events: none;
         display: block; /* For Firefox */
       } 
 
 
-    .text h1 {
+    .project h1 {
         font-size: 230%;
         color: black;
         margin: 90px auto 70px;
@@ -423,7 +411,7 @@ img {
     }
 
     
-    .text h2 {
+    .project h2 {
         font-size: 180%;
         color: black;
         margin: 70px auto 10px;
@@ -435,27 +423,175 @@ img {
         color: rgba(120, 120, 120 ,1);
     }
 
-    .text img {
+    .project p {
+        color: rgba(120, 120, 120 ,1);
+        font-family: "Roboto";
+        font-weight: 700;
+        font-size: 135%;
+        padding-top: 20px;
+        line-height: 175%;
+    }
+
+    .project img {
     /* width: 12%; */
         display: block;
         margin: 10px auto 40px;
         max-width: 100%;
     }
 
-    .text video {
+    .project video {
         display: block;
         margin: 10px auto 40px;
         max-width: 100%;
     }
 
-    .text a {
+    .project a {
         text-decoration: underline;
         color: rgba(120, 120, 120 ,1);
     }
 
-    .text a:visited {
+    .project a:visited {
         color: rgba(180, 120, 120 ,1);
     }
+
+
+
+
+
+    .layout {
+        display: grid;
+        grid-template-columns: 5fr 2fr;
+    }
+
+    .description {
+        width: 2fr;
+        border : solid red;
+    }
+
+    .description p {
+        color: rgba(120, 120, 120 ,1);
+        font-family: "Roboto";
+        font-weight: 700;
+        font-size: 135%;
+        padding-top: 20px;
+        line-height: 175%;
+        
+    }
+
+    .description h2 {
+        font-size: 180%;
+        color: black;
+        margin: 70px auto 10px;
+        font-family: "Roboto";
+        font-weight: 600;
+        /* border: 1px solid red; */
+        text-align: center;
+        vertical-align: middle;
+        color: rgba(120, 120, 120 ,1);
+    }
+
+    .index {
+        /* width: 1fr; */
+        top: 0;
+        position: sticky;
+        position: -webkit-sticky;
+        height: 100px;
+        border: 1px solid red;
+        font-size: 150%;
+        font-family: "Roboto";
+        font-weight: 600;
+        color: black;
+
+        /* border: 1px solid red; */
+        /* text-align: center; */
+        /* vertical-align: middle;
+        color: black; */
+    }
+
+    .index a {
+        cursor: pointer;
+        margin: 10px 20px 0px 20px;
+    }
+
+    .index a::after{
+        content: "\a";
+        white-space: pre;
+    }
+
+    .about > form > div[contenteditable=true]:empty:before{
+        content: attr(placeholder);
+        pointer-events: none;
+        display: block; /* For Firefox */
+      } 
+
+
+    .about h1 {
+        font-size: 230%;
+        color: black;
+        margin: 90px auto 70px;
+        font-family: "Roboto";
+        font-weight: 600;
+        /* border: 1px solid red; */
+        text-align: center;
+        vertical-align: middle;
+        color: rgba(120, 120, 120 ,1);
+    }
+
+    
+    .about h2 {
+        font-size: 180%;
+        color: black;
+        margin: 70px auto 10px;
+        font-family: "Roboto";
+        font-weight: 600;
+        /* border: 1px solid red; */
+        text-align: center;
+        vertical-align: middle;
+        color: rgba(120, 120, 120 ,1);
+    }
+
+    .about p {
+        color: rgba(120, 120, 120 ,1);
+        font-family: "Roboto";
+        font-weight: 700;
+        font-size: 135%;
+        padding-top: 20px;
+        line-height: 175%;
+    }
+
+    .about img {
+    /* width: 12%; */
+        display: block;
+        margin: 10px auto 40px;
+        max-width: 100%;
+    }
+
+    .about video {
+        display: block;
+        margin: 10px auto 40px;
+        max-width: 100%;
+    }
+
+    .about a {
+        text-decoration: underline;
+        color: rgba(120, 120, 120 ,1);
+    }
+
+    .about a:visited {
+        color: rgba(180, 120, 120 ,1);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #thumbnails {
