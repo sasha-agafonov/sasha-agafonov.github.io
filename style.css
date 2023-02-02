@@ -442,7 +442,10 @@ img {
     .project video {
         display: block;
         margin: 10px auto 40px;
-        max-width: 100%;
+        max-width: 600px;
+        width: 100%;
+        height: auto;
+
     }
 
     .project a {
@@ -465,7 +468,6 @@ img {
 
     .description {
         width: 2fr;
-        border : solid red;
     }
 
     .description p {
@@ -496,7 +498,6 @@ img {
         position: sticky;
         position: -webkit-sticky;
         height: 100px;
-        border: 1px solid red;
         font-size: 150%;
         font-family: "Roboto";
         font-weight: 600;
