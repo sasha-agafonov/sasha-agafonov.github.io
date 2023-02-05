@@ -1,3 +1,10 @@
+:root {
+    --underline-width: 0;
+    --underline-offset-x: 0;
+    --underline-offset-y: 0;
+    --mode-color: rgba(0, 0, 0, 1);
+}
+
 @font-face {
     font-family: "Source Code Pro";
 }
@@ -199,10 +206,6 @@ img {
    -webkit-transition: .5s ease-in-out;
    -moz-transition: .5s ease-in-out;
    -o-transition: .5s ease-in-out;
-  --underline-width: 0;
-  --underline-offset-x: 0;
-  --underline-offset-y: 0;
-  --main-bg-color: rgba(0, 0, 0, 1);
 }
 
 
@@ -218,7 +221,7 @@ img {
         height: 1px;
         transform: translate(var(--underline-offset-x), var(--underline-offset-y));
         width: var(--underline-width);
-        background-color: var(--main-bg-color);
+        background-color: var(--mode-color);
         transition: transform 0.5s, width 0.5s;
     }
 
@@ -230,7 +233,7 @@ img {
         height: 1px;
         width: var(--underline-width);
         transform: translate(var(--underline-offset-x), var(--underline-offset-y));
-        background-color: var(--main-bg-color);
+        background-color: var(--mode-color);
         transition: none;
  
     }
@@ -341,7 +344,7 @@ img {
 
 
     #callback > div:focus  {
-        border-color: var(--main-bg-color);
+        border-color: var(--mode-color);
     }
 
 
@@ -386,7 +389,7 @@ img {
 
     #callback button:hover {
         border: 2px solid;
-        color: var(--main-bg-color);
+        color: var(--mode-color);
     }
 
 
@@ -462,12 +465,15 @@ img {
 
 
     .layout {
+        margin-top: 60px;
         display: grid;
-        grid-template-columns: 5fr 2fr;
+        grid-template-columns: 4fr 1fr;
+        grid-gap: 30px;
     }
 
     .description {
         width: 2fr;
+        /* border: 1px solid blue; */
     }
 
     .description p {
@@ -475,10 +481,16 @@ img {
         font-family: "Roboto";
         font-weight: 700;
         font-size: 135%;
-        padding-top: 20px;
+        margin-top: 20px;
         line-height: 175%;
         
+        
     }
+
+    .description h2:first-of-type {
+        margin-top: 0;
+    }
+
 
     .description h2 {
         font-size: 180%;
@@ -497,27 +509,38 @@ img {
         top: 0;
         position: sticky;
         position: -webkit-sticky;
-        height: 100px;
+        height: 100vh;
         font-size: 150%;
         font-family: "Roboto";
         font-weight: 600;
         color: black;
-
         /* border: 1px solid red; */
-        /* text-align: center; */
-        /* vertical-align: middle;
-        color: black; */
     }
 
     .index a {
         cursor: pointer;
-        margin: 10px 20px 0px 20px;
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+    }
+
+    .index a:first-of-type {
+        margin-top: 0;
     }
 
     .index a::after{
         content: "\a";
         white-space: pre;
     }
+
+    .index a:hover {
+        color: var(--mode-color);
+    }
+
+
+
+
+
 
     .about > form > div[contenteditable=true]:empty:before{
         content: attr(placeholder);
