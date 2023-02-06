@@ -2,7 +2,7 @@ $(window).on('load', function () {
     $('#loading').hide();
   }) 
 
-
+  hljs.highlightAll();
 
 window.onload = function () {
     setQueryListener();
@@ -11,7 +11,6 @@ window.onload = function () {
     loadIndex(); // just use loadfrag ffs
     let idler = new Idler();
 
- 
 }
 
 //—————————————————————————————————————————————————————————————————————————————————————————————————
@@ -176,6 +175,7 @@ function loadFragment(frag) {
         closeMobileMenuIfOpen();
         $("#content").load("/" + frag + ".html",function(){}).hide().fadeIn(500);
         window.scrollTo(top);
+        
     });
 }
 
@@ -308,6 +308,14 @@ function scroller(element) {
             header.scrollIntoView({behavior: "smooth"});
             element.style.setProperty("color", color);
         }
+    });
+}
+
+//—————————————————————————————————————————————————————————————————————————————————————————————————
+
+function highlightCode() {
+    document.querySelectorAll('code').forEach(el => {
+        hljs.highlightElement(el);
     });
 }
 

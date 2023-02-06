@@ -39,6 +39,34 @@
     eliminate statistical homogeneity. The fundamental problem is rather 
     simple - computer memory is finite. </p>
 
+    <img src onerror="highlightCode();">
+    <pre><code >
+
+      #include "brain.hpp"
+
+      class total_disaster : public disaster
+      {
+          public:
+              total_disaster(GLdisaster disaster) : disaster(disaster) {};
+      }
+
+      int main()
+      {
+          total_disaster disaster(glGetTrouble());
+          try
+          {
+              brain :: fix_disaster(total_disaster);
+          }
+          catch (exception& cba)
+          {
+              throw cba;
+          }
+          return total_disaster;
+      }
+
+    </code></pre>
+    
+
     <h2>fBm</h2>
     <p>Creating a truly infinite virtual terrain is an inachievable task 
   with today's and most likely any future hardware. Many approaches 
@@ -97,22 +125,22 @@ simple - computer memory is finite. </p>
 
 
     <div class="index">
-      <a onclick="scroller(this)">Introduction</a>
-      <a onclick="scroller(this)">Infiniteness</a>
-      <a onclick="scroller(this)">Perlin Noise</a>
-      <a onclick="scroller(this)">fBm</a>
-      <a onclick="scroller(this)">Domain Warping</a>
-      <a onclick="scroller(this)">Compute Shaders</a>
-      <a onclick="scroller(this)">Colouring</a>
-      <a onclick="scroller(this)">Geomipmapping</a>
-      <a onclick="scroller(this)">Quaternions</a>
-      <a onclick="scroller(this)">World's end</a>
-      <a onclick="scroller(this)">Sky Box</a>
-      <a onclick="scroller(this)">Vegetation</a>
-      <a onclick="scroller(this)">Gallery</a>
-      <a onclick="scroller(this)">Future Work</a>
-      <a onclick="scroller(this)">Downloads</a>
-      <a onclick="scroller(this)">Bibliography</a>
+      <a onclick="scroller(this);">Introduction</a>
+      <a onclick="scroller(this);">Infiniteness</a>
+      <a onclick="scroller(this);">Perlin Noise</a>
+      <a onclick="scroller(this);">fBm</a>
+      <a onclick="scroller(this);">Domain Warping</a>
+      <a onclick="scroller(this);">Compute Shaders</a>
+      <a onclick="scroller(this);">Colouring</a>
+      <a onclick="scroller(this);">Geomipmapping</a>
+      <a onclick="scroller(this);">Quaternions</a>
+      <a onclick="scroller(this);">World's end</a>
+      <a onclick="scroller(this);">Sky Box</a>
+      <a onclick="scroller(this);">Vegetation</a>
+      <a onclick="scroller(this);">Gallery</a>
+      <a onclick="scroller(this);">Future Work</a>
+      <a onclick="scroller(this);">Downloads</a>
+      <a onclick="scroller(this);">Bibliography</a>
     </div>
   </div> -->
   
