@@ -14,6 +14,9 @@
     font-family: 'Roboto', sans-serif;
 }
 
+code {
+    font-family: "Source Code Pro";
+}
 
 body {
     margin: 0 auto;
@@ -505,16 +508,13 @@ img {
     }
 
     .index {
-        /* width: 1fr; */
         top: 0;
         position: sticky;
         position: -webkit-sticky;
         height: 100vh;
-        font-size: 150%;
+        font-size: 135%;
         font-family: "Roboto";
         font-weight: 600;
-        color: black;
-        /* border: 1px solid red; */
     }
 
     .index a {
@@ -522,10 +522,11 @@ img {
         display: block;
         margin-top: 10px;
         text-decoration: none;
+        color: var(--mode-color);
     }
 
     .index a:first-of-type {
-        margin-top: 0;
+        margin-top: 78px;
     }
 
     .index a::after{
@@ -733,19 +734,3 @@ img {
         opacity: 0
     }
   }
-
-
-
-  /* .pseudo-h {
-    transition: 0.5s;
-    opacity: 1;
-    background-color: rgba(1, 1, 1, 0.65);
-    border: 1px solid red;
-  }
-
-.pseudo-show {
-    background-color: rgba(1, 1, 1, 0.65);
-    transition: 0.5s;
-    opacity: 1;
-    border : 1px solid red;
-} */
