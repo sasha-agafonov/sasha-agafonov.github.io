@@ -10,6 +10,14 @@ window.onload = function () {
     dynamicUnderline();
     loadIndex(); // just use loadfrag ffs
     let idler = new Idler();
+    // themeListener();
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        dark();
+    }
+    // window.matchMedia("(prefers-color-scheme: dark)").addEventListener(function (e) {
+    //     dark();
+    // });
 
 }
 

@@ -712,6 +712,13 @@ img {
     }
 }
 
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: white;
+        color: black;
+    }
+}
+
 @keyframes fade-in {
 
     from { 
