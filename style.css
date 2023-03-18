@@ -443,7 +443,6 @@ img {
         display: block;
         margin: 10px auto 40px;
         max-width: 100%;
-        border-radius: 30px;
     }
 
     .project video {
@@ -452,7 +451,6 @@ img {
         max-width: 600px;
         width: 100%;
         height: auto;
-        border-radius: 30px;
 
     }
 
@@ -591,15 +589,12 @@ img {
         display: block;
         margin: 10px auto 40px;
         max-width: 100%;
-        border-radius: 30px;
     }
 
     .about video {
         display: block;
         margin: 10px auto 40px;
         max-width: 100%;
-        border-radius: 10px;
-        border-radius: 30px;
     }
 
     .about a {
@@ -653,7 +648,6 @@ img {
         background-color: rgba(1, 1, 1, 0.65);
         opacity: 0;
         cursor: pointer;
-        border-radius: 30px;
     }
 
 
@@ -694,14 +688,12 @@ img {
         width: 100%;
         height: 100%;
         vertical-align: middle;
-        border-radius: 30px;
     }
 
     #thumbnails video {
         width: 100%;
         height: 100%;
         vertical-align: middle;
-        border-radius: 30px;
     }
 
 
