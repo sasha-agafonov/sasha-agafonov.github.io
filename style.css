@@ -209,6 +209,7 @@ img {
    -webkit-transition: .5s ease-in-out;
    -moz-transition: .5s ease-in-out;
    -o-transition: .5s ease-in-out;
+
 }
 
 
@@ -221,11 +222,12 @@ img {
         content: "";
         position: absolute;
         top: 30px;
-        height: 1px;
+        height: 0.015em;
         transform: translate(var(--underline-offset-x), var(--underline-offset-y));
         width: var(--underline-width);
         background-color: var(--mode-color);
         transition: transform 0.5s, width 0.5s;
+        
     }
 
 
