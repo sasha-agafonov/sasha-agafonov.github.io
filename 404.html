@@ -20,20 +20,29 @@ permalink: /404.html
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     </head>
 
-    <body>  
-        <div class="about" 
-        style="display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            min-height: 100vh;">
-        <img src="error-grey.png" style="width:404px;height:404px;" alt="cannot display image">
-        <br>  <br>  <br>  <br>
-        <h1>E = 20<sup> 2</sup> + 20 * 0.2</h1>
+    <body onload="javascript:returner()">  
+        <div class="error">
+            <h1>You've found something that doesn't belong to you.</h1>
+            <img src="sdr.png"  alt="cannot display image" style="width: 1000px !important;">
+            <div>
+                <a id="autoreturn"></a>
+            </div>
         </div>
     </body>
 
-
+    <script type="text/javascript">
+        function returner() {
+            let counter = 5;
+            document.getElementById("autoreturn").innerHTML = counter;
+            setInterval(() => {
+                if (counter <= 1) {
+                    window.location.href = "https://sasha-agafonov.github.io/";
+                    return;
+                }
+                document.getElementById("autoreturn").innerHTML = --counter;
+            }, 1000);
+        }
+    </script>
 
 </html>
 
