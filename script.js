@@ -205,7 +205,7 @@ function copyright() {
 
 //—————————————————————————————————————————————————————————————————————————————————————————————————
 
-function glNonsense() {
+function signature() {
 
     const date = new Date();
     const year = date.getFullYear();
@@ -213,17 +213,17 @@ function glNonsense() {
     const dayOfMonth = date.getUTCDate();
     const dayOfWeek = date.getDay();
 
-    let nonsenseObject = document.getElementById("gl-nonsense");
+    let nonsenseObject = document.getElementById("signature");
 
-    if (dayOfWeek === 5 && dayOfMonth === 13) nonsenseObject.innerHTML = "glFriday(13);"
-    else if (month === 12 && dayOfMonth === 25) nonsenseObject.innerHTML = "glMerryChristmas();"
-    else if ((month === 12 && dayOfMonth === 31) || (month === 1 && dayOfMonth === 1)) nonsenseObject.innerHTML = "glHappyNewYear(" + year + ");"
-    else if (month === 1 && dayOfMonth === 7) nonsenseObject.innerHTML = "glMerryOrthodoxChristmas();"
-    else if (month === 2 && dayOfMonth === 14) nonsenseObject.innerHTML = "glHappyValentinesDay();"
-    else if (month === 3 && dayOfMonth === 8) nonsenseObject.innerHTML = "glHappyWomensDay();"
-    else if (month === 3 && dayOfMonth === 19) nonsenseObject.innerHTML = "glHappyMothersDay();"
-    else if (month === 10 && dayOfMonth === 31) nonsenseObject.innerHTML = "glHappyHalloween();"
-    else nonsenseObject.innerHTML = "glGoodLuck();"
+    if (dayOfWeek === 5 && dayOfMonth === 13) nonsenseObject.innerHTML = "friday(13);"
+    else if (month === 12 && dayOfMonth === 25) nonsenseObject.innerHTML = "merry_christmas();"
+    else if ((month === 12 && dayOfMonth === 31) || (month === 1 && dayOfMonth === 1)) nonsenseObject.innerHTML = "happy_new_year(" + year + ");"
+    else if (month === 1 && dayOfMonth === 7) nonsenseObject.innerHTML = "merry_orthodox_christmas();"
+    else if (month === 2 && dayOfMonth === 14) nonsenseObject.innerHTML = "happy_valentines_day();"
+    else if (month === 3 && dayOfMonth === 8) nonsenseObject.innerHTML = "happy_womens_day();"
+    else if (month === 3 && dayOfMonth === 19) nonsenseObject.innerHTML = "happy_mothers_day();"
+    else if (month === 10 && dayOfMonth === 31) nonsenseObject.innerHTML = "happy_halloween();"
+    else nonsenseObject.innerHTML = "good_luck();"
 
 }
 

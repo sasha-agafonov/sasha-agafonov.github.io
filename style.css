@@ -70,7 +70,10 @@ img {
 
 #content {}
 
-#gl-nonsense {}
+#signature {
+
+    font-variant-numeric: tabular-nums;
+}
 
 
 
