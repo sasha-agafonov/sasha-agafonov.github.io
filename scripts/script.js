@@ -179,11 +179,6 @@ function mediaQueryResponse(query) {
 //—————————————————————————————————————————————————————————————————————————————————————————————————
 
 function loadFragment(frag) {
-//     alert(frag);
-
-//     var loc = window.location.pathname;
-// var dir = loc.substring(0, loc.lastIndexOf('/'));
-// alert(dir);
     $(document).ready(function() {
         closeMobileMenuIfOpen();
         $("#content").load("/" + frag + ".html",function(){}).hide().fadeIn(500);

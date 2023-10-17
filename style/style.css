@@ -14,6 +14,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+@font-face {
+    font-family: "roboto-mono";
+    src: url("/fonts/roboto-mono/roboto-mono-variable.ttf");
+}
+
 code {
     font-family: "Source Code Pro";
 }
@@ -70,13 +75,11 @@ img {
 
 #content {}
 
+
 #signature {
-
-    font-variant-numeric: tabular-nums;
+    font-family: "roboto-mono";
+    font-weight: 350;
 }
-
-
-
 
 #hamburger {
     display: none;
