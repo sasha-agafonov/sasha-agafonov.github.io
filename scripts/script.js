@@ -152,7 +152,7 @@ function setQueryListener() {
     
 }
 
-//—————————————————————————————————————————————————————————————————————————————————————————————————
+//—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 function mediaQueryResponse(query) {
 
@@ -176,7 +176,7 @@ function mediaQueryResponse(query) {
     }
 }
 
-//—————————————————————————————————————————————————————————————————————————————————————————————————
+//—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 function loadFragment(frag) {
     $(document).ready(function() {
@@ -187,7 +187,7 @@ function loadFragment(frag) {
     });
 }
 
-//—————————————————————————————————————————————————————————————————————————————————————————————————
+//—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 function loadIndex() {
     $(document).ready(function(){
@@ -195,36 +195,52 @@ function loadIndex() {
     });
 }
 
-//—————————————————————————————————————————————————————————————————————————————————————————————————
+//—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 function copyright() {
     document.getElementById("copy").innerHTML = new Date().getFullYear();
 }
 
-//—————————————————————————————————————————————————————————————————————————————————————————————————
+//—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
-function signature() {
+function getSignature() {
+    if (!getSignature.fixedDateEvents) {
+        const year = new Date().getFullYear();
+
+        getSignature.fixedDateEvents = {
+            "1-7": "merry_orthodox_christmas();",
+            "2-14": "happy_valentines_day();",
+            "3-8": "happy_womens_day();",
+            "3-19": "happy_mothers_day();",
+            "10-15": "happy_day();",
+            "10-31": "happy_halloween();",
+            "11-7": "happy_n7_day(" + year + ");",
+            "12-25": "merry_christmas();",
+            "12-25": "merry_boxing_day();",
+            "12-31": "happy_new_year(" + year + ");",
+            "1-1": "happy_new_year(" + year + ");"
+        };
+    }
+
+    let signatureElement = document.getElementById("signature");
+    signatureElement.innerHTML = "// "
+
     const date = new Date();
-    const year = date.getFullYear();
-    const month = date.getUTCMonth() + 1;
     const dayOfMonth = date.getUTCDate();
     const dayOfWeek = date.getDay();
 
-    let nonsenseObject = document.getElementById("signature");
-
-    if (dayOfWeek === 5 && dayOfMonth === 13) nonsenseObject.innerHTML = "friday(13);"
-    else if (month === 12 && dayOfMonth === 25) nonsenseObject.innerHTML = "merry_christmas();"
-    else if ((month === 12 && dayOfMonth === 31) || (month === 1 && dayOfMonth === 1)) nonsenseObject.innerHTML = "happy_new_year(" + year + ");"
-    else if (month === 1 && dayOfMonth === 7) nonsenseObject.innerHTML = "merry_orthodox_christmas();"
-    else if (month === 2 && dayOfMonth === 14) nonsenseObject.innerHTML = "happy_valentines_day();"
-    else if (month === 3 && dayOfMonth === 8) nonsenseObject.innerHTML = "happy_womens_day();"
-    else if (month === 3 && dayOfMonth === 19) nonsenseObject.innerHTML = "happy_mothers_day();"
-    else if (month === 10 && dayOfMonth === 31) nonsenseObject.innerHTML = "happy_halloween();"
-    else nonsenseObject.innerHTML = "good_luck();"
-
+    if (dayOfWeek === 5 && dayOfMonth === 13) {
+        signatureElement.innerHTML += "friday(13);";
+    }
+    else {
+        const month = date.getUTCMonth() + 1;
+        const dateKey = `${month}-${dayOfMonth}`;
+        signatureElement.innerHTML += getSignature.fixedDateEvents[dateKey] || "good_luck();";
+    }
 }
 
-//—————————————————————————————————————————————————————————————————————————————————————————————————
+//—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
 
 function toggleMobileMenu() {
 
@@ -233,7 +249,7 @@ function toggleMobileMenu() {
 
 }
 
-//—————————————————————————————————————————————————————————————————————————————————————————————————
+//—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 function closeMobileMenuIfOpen() {
 
