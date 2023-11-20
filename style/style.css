@@ -745,3 +745,27 @@ img {
         opacity: 0
     }
   }
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.centered-content {
+    text-align: center;
+}
+
+.error h1 {
+    font-size: 230%;
+    color: black;
+    margin: 0 auto 40px;
+    font-family: "Roboto";
+    font-weight: 600;
+    color: rgba(120, 120, 120, 1);
+}
+
+.centered-content img {
+    width: 1000px !important;
+}
