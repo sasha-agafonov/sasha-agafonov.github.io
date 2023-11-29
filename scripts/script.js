@@ -7,6 +7,7 @@ $(window).on('load', function () {
 window.onload = function () {
     setQueryListener();
     copyright();
+    //getSignature();
     dynamicUnderline();
     loadIndex(); // just use loadfrag ffs
     let idler = new Idler();
@@ -203,11 +204,11 @@ function copyright() {
 
 //—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
-function getSignature() {
-    if (!getSignature.fixedDateEvents) {
+function setSignature() {
+    if (!setSignature.fixedDateEvents) {
         const year = new Date().getFullYear();
 
-        getSignature.fixedDateEvents = {
+        setSignature.fixedDateEvents = {
             "1-7": "merry_orthodox_christmas();",
             "2-14": "happy_valentines_day();",
             "3-8": "happy_womens_day();",
@@ -235,7 +236,7 @@ function getSignature() {
     else {
         const month = date.getUTCMonth() + 1;
         const dateKey = `${month}-${dayOfMonth}`;
-        signatureElement.innerHTML += getSignature.fixedDateEvents[dateKey] || "good_luck();";
+        signatureElement.innerHTML += setSignature.fixedDateEvents[dateKey] || "good_luck();";
     }
 }
 
@@ -447,18 +448,28 @@ function callback() {
     let breaker = 0;
     let counter = 0;
 
-    elems.forEach(elem, () => {
-        ++counter;
-        if (elem.innerHTML) ++breaker;
-    });
+    // elems.forEach(elem, () => {
+    //     ++counter;
+    //     if (elem.innerHTML) ++breaker;
+    // });
 
-    if (breaker !== counter) {
-        alert("Please fill all fields.")
-    }
-    else {
-        alert("Success.")
-    }
-    elems.forEach(elem => elem.innerHTML = "");
+    // if (breaker !== counter) {
+    //     alert("Please fill all fields.")
+    // }
+    // else {
+    //     alert("Success.")
+    // }
+   // elems.forEach(elem => elem.innerHTML = "");
+
+    alert("asdd");
+    fetch('../mail/index.php', { method: 'POST' })
+    .then(response => response.text())
+    .then(data => {
+        console.log(data); // Display the response
+    })
+    .catch(error => console.error('Error:', error));
+
+
 }
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————

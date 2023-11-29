@@ -588,7 +588,7 @@ img {
         line-height: 175%;
     }
 
-    .about img {
+    .about > img {
     /* width: 12%; */
         display: block;
         margin: 10px auto 40px;
