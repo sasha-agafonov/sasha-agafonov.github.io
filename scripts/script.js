@@ -218,7 +218,7 @@ function setSignature() {
             "11-7": "happy_n7_day(" + year + ");",
             "12-25": "merry_christmas();",
             "12-26": "merry_boxing_day();",
-            "12-31": "happy_new_year(" + year + ");",
+            "12-31": "happy_new_year(" + (year + 1) + ");",
             "1-1": "happy_new_year(" + year + ");"
         };
     }
