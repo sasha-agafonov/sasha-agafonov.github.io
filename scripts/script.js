@@ -1,15 +1,19 @@
-$(window).on('load', function () {
-    $('#loading').hide();
-  }) 
+// $(window).on('load', function () {
+//     $('#loading').hide();
+//   }) 
 
-  hljs.highlightAll();
+//   hljs.highlightAll();
 
-window.onload = function () {
+loadFragment("pages/loading");
+
+window.onload = setTimeout(() => {
     setQueryListener();
     copyright();
     //getSignature();
     dynamicUnderline();
     loadIndex(); // just use loadfrag ffs
+
+
     let idler = new Idler();
     // themeListener();
 
@@ -20,7 +24,7 @@ window.onload = function () {
     //     dark();
     // });
 
-}
+}, 3000);
 
 //—————————————————————————————————————————————————————————————————————————————————————————————————
 
@@ -301,10 +305,21 @@ function toggleThemeIcon() {
 
 //—————————————————————————————————————————————————————————————————————————————————————————————————
 
-function dynamicUnderline() {
-    
-    const links = document.getElementById("nav-links");
+function displayLoadingIndicator() {
+    document.addEventListener("DOMContentLoaded", () => {
+        loadFragment('pages/loading');
+        alert("loading");
+        window.addEventListener("load", function() {
+            loadFragment('pages/projects');
+            this.alert("loaded");
+        });
+    });
+}
 
+//—————————————————————————————————————————————————————————————————————————————————————————————————
+
+function dynamicUnderline() {
+    const links = document.getElementById("nav-links");
     let target_width = document.getElementById("projects").offsetWidth;
     let target_offset_x = document.getElementById("projects").offsetLeft;
     let target_offset_y = document.getElementById("projects").offsetTop;
@@ -322,7 +337,7 @@ function dynamicUnderline() {
     });
 
     links.addEventListener("click", (event) => {
-        if (event.target.tagName.toLowerCase() === "a" && event.target.id !== "source") {
+        if ((event.target.tagName.toLowerCase() === "a") && (event.target.id !== "source")) {
             target_width = event.target.offsetWidth;
             target_offset_x = event.target.offsetLeft;
             target_offset_y = event.target.offsetTop;
