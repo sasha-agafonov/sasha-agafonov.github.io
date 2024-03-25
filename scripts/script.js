@@ -437,29 +437,10 @@ function callback() {
     let breaker = 0;
     let counter = 0;
 
-    // elems.forEach(elem, () => {
-    //     ++counter;
-    //     if (elem.innerHTML) ++breaker;
-    // });
-
-    // if (breaker !== counter) {
-    //     alert("Please fill all fields.")
-    // }
-    // else {
-    //     alert("Success.")
-    // }
-   // elems.forEach(elem => elem.innerHTML = "");
-
-    alert("asdd");
     fetch('../mail/index.php', { method: 'POST' })
     .then(response => response.text())
     .then(data => {
-        console.log(data); // Display the response
+        console.log(data);
     })
     .catch(error => console.error('Error:', error));
-
-
 }
-
-//-------------------------------------------------------------------------------------------------
-
