@@ -1,18 +1,8 @@
-// $(window).on('load', function () {
-//     $('#loading').hide();
-//   }) 
-
-//   hljs.highlightAll();
-
-loadFragment("pages/loading");
-
-
 window.addEventListener("load", () => {
      setQueryListener();
      copyright();
-    //getSignature();
      dynamicUnderline();
-     loadIndex(); // just use loadfrag ffs
+     setPage("projects");
 });
 
 
@@ -193,13 +183,31 @@ function mediaQueryResponse(query) {
 
 //-------------------------------------------------------------------------------------------------
 
-function loadFragment(frag) {
-    $(document).ready(function() {
-        closeMobileMenuIfOpen();
-        $("#content").load("/" + frag + ".html",function(){}).hide().fadeIn(500);
-        window.scrollTo(top);
-        
-    });
+function setPage(page) {
+    if (!this.pages) {
+        const dir = "/pages/";
+        this.pages = {
+            "projects" : dir + "projects.html",
+            "clearSky" : dir + "clear-sky.html",
+            "hydraulicErosion" : dir + "hydraulic-erosion.html",
+            "manhattanNoise" : dir + "manhattan-noise.html",
+            "pseudoInfiniteWorlds" : dir + "pseudo-infinite-worlds.html",
+            "about" : dir + "about.html"
+        }
+    }
+    if ((page in this.pages) && (page !== this.page)) {
+        fetch(this.pages[page])
+            .then((response) => {
+                return response.text();
+            })
+            .then((text) => {
+                document.getElementById("content").innerHTML = text;
+                this.page = page;
+            })
+            .catch(() => {
+                alert("Something went wrong!");
+            });
+    }
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -315,16 +323,14 @@ function toggleThemeIcon() {
 
 //-------------------------------------------------------------------------------------------------
 
-function displayLoadingIndicator() {
-    document.addEventListener("DOMContentLoaded", () => {
-        loadFragment('pages/loading');
-        alert("loading");
-        window.addEventListener("load", function() {
-            loadFragment('pages/projects');
-            this.alert("loaded");
-        });
-    });
-}
+// function displayLoadingIndicator() {
+//     document.addEventListener("DOMContentLoaded", () => {
+//         alert("loading");
+//         window.addEventListener("load", function() {
+//             this.alert("loaded");
+//         });
+//     });
+// }
 
 //-------------------------------------------------------------------------------------------------
 
@@ -368,7 +374,7 @@ function scroller(element) {
     var headers = document.querySelectorAll(".description h2");
     const color = getComputedStyle(document.documentElement, null).getPropertyValue("--mode-color");
 
-    headers.forEach(header => {
+    headers.forEach((header) => {
         // element.style.setProperty("color", "rgba(120, 120, 120, 1)");
         if (header.textContent == element.textContent) {
             header.scrollIntoView({behavior: "smooth"});
@@ -380,7 +386,7 @@ function scroller(element) {
 //-------------------------------------------------------------------------------------------------
 
 function highlightCode() {
-    document.querySelectorAll('code').forEach(el => {
+    document.querySelectorAll('code').forEach((el) => {
         hljs.highlightElement(el);
     });
 }
