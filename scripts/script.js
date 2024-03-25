@@ -1,5 +1,6 @@
 window.addEventListener("load", () => {
      setPage("loading");
+     prefetchPages();
      setQueryListener()
      setDynamicUnderline();
      setPage("projects");
@@ -178,6 +179,17 @@ function mediaQueryResponse(query) {
         // kill jqry later
         $("#nav-links, #nav").removeClass("mobile");
         $("#hamburger").removeClass('open');
+    }
+}
+
+//-------------------------------------------------------------------------------------------------
+
+function prefetchPages() {
+    for (page in setPage.pages) {
+        fetch(setPage.pages[page])
+        .then((response) => {
+            return response.text();
+        })
     }
 }
 
