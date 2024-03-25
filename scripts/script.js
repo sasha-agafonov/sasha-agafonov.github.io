@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-
+     setPage("loading");
      setQueryListener()
      setDynamicUnderline();
      setPage("projects");
