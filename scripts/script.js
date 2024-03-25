@@ -1,10 +1,10 @@
 window.addEventListener("load", () => {
-     setQueryListener();
-     copyright();
-     dynamicUnderline();
-     setPage("projects");
-});
 
+     setQueryListener()
+     setDynamicUnderline();
+     setPage("projects");
+     setCopyright();
+});
 
 // window.onload = setTimeout(() => {
 //     setQueryListener();
@@ -192,7 +192,8 @@ function setPage(page) {
             "hydraulicErosion" : dir + "hydraulic-erosion.html",
             "manhattanNoise" : dir + "manhattan-noise.html",
             "pseudoInfiniteWorlds" : dir + "pseudo-infinite-worlds.html",
-            "about" : dir + "about.html"
+            "about" : dir + "about.html",
+            "loading" : dir + "loading.html"
         }
     }
     if ((page in this.pages) && (page !== this.page)) {
@@ -212,15 +213,7 @@ function setPage(page) {
 
 //-------------------------------------------------------------------------------------------------
 
-function loadIndex() {
-    $(document).ready(function(){
-        $("#content").load("pages/projects.html");
-    });
-}
-
-//-------------------------------------------------------------------------------------------------
-
-function copyright() {
+function setCopyright() {
     document.getElementById("copy").innerHTML = new Date().getFullYear();
 }
 
@@ -323,18 +316,7 @@ function toggleThemeIcon() {
 
 //-------------------------------------------------------------------------------------------------
 
-// function displayLoadingIndicator() {
-//     document.addEventListener("DOMContentLoaded", () => {
-//         alert("loading");
-//         window.addEventListener("load", function() {
-//             this.alert("loaded");
-//         });
-//     });
-// }
-
-//-------------------------------------------------------------------------------------------------
-
-function dynamicUnderline() {
+function setDynamicUnderline() {
     const links = document.getElementById("nav-links");
     let target_width = document.getElementById("projects").offsetWidth;
     let target_offset_x = document.getElementById("projects").offsetLeft;
@@ -364,30 +346,6 @@ function dynamicUnderline() {
         links.style.setProperty("--underline-width", `${target_width}px`);
         links.style.setProperty("--underline-offset-x", `${target_offset_x}px`);
         links.style.setProperty("--underline-offset-y", `${target_offset_y}px`);
-    });
-}
-
-//-------------------------------------------------------------------------------------------------
-
-function scroller(element) {
-    
-    var headers = document.querySelectorAll(".description h2");
-    const color = getComputedStyle(document.documentElement, null).getPropertyValue("--mode-color");
-
-    headers.forEach((header) => {
-        // element.style.setProperty("color", "rgba(120, 120, 120, 1)");
-        if (header.textContent == element.textContent) {
-            header.scrollIntoView({behavior: "smooth"});
-            element.style.setProperty("color", color);
-        }
-    });
-}
-
-//-------------------------------------------------------------------------------------------------
-
-function highlightCode() {
-    document.querySelectorAll('code').forEach((el) => {
-        hljs.highlightElement(el);
     });
 }
 
